@@ -1,3 +1,8 @@
 app_louvre_homepage:
     path:     /
-    defaults: { _controller: AppLouvreBundle:Default:index }
+    defaults: { _controller: AppLouvreBundle:App:index }
+
+app_louvre_order:
+    path:     /step/1
+    defaults: { _controller: AppLouvreBundle:App:order }
+
