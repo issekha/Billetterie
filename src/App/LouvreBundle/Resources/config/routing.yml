@@ -1,0 +1,3 @@
+app_louvre_homepage:
+    path:     /
+    defaults: { _controller: AppLouvreBundle:Default:index }
