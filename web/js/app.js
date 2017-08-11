@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
               if ($(this).is(':checked')) {
                 $('#modal-price').modal();
               };
-            });*/
+            });
         });
 
 	
