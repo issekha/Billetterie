@@ -2,262 +2,210 @@
 
 namespace App\LouvreBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
+ * Order
+ *
  * @ORM\Table(name="app_order")
  * @ORM\Entity(repositoryClass="App\LouvreBundle\Repository\OrderRepository")
- * 
  */
 class Order
 {
-  /**
-   * @ORM\Column(name="id", type="integer")
-   * @ORM\Id
-   * @ORM\GeneratedValue(strategy="AUTO")
-   */
-  protected $id;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
-  /**
-   * @ORM\Column(name="order_date", type="datetime")
-   * @Assert\DateTime()
-   */
-  protected $orderDate;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="visitDate", type="datetime")
+     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
+     * @Assert\Date(message="Date non valide")
+     */
+    private $visitDate;
 
-  /**
-   * @ORM\Column(name="email", type="string", length=255, nullable=true)
-   * @Assert\Email()
-   */
-  protected $email;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticketsType", type="integer")
+     */
+    private $ticketsType;
 
-  /**
-   * @ORM\Column(name="visit_date", type="datetime")
-   * @Assert\DateTime()
-   * @Assert\GreaterThanOrEqual("today", message="Vous ne pouvez commander pour un jour passé.")
-   */
-  protected $visitDate;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticketsNbr", type="integer")
+     */
+    private $ticketsNbr;
 
-  /**
-   * @ORM\Column(name="tickets_type", type="string", columnDefinition="enum('journée', 'demi-journée')")
-   * @Assert\Type("string")
-   */
-  protected $ticketsType;
+   
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="orderCode", type="string", length=255)
+     */
+    private $orderCode;
 
-  /**
-   * @var ArrayCollection
-   * @ORM\OneToMany(targetEntity="App\LouvreBundle\Entity\Ticket", mappedBy="order", cascade={"persist"})
-   * @Assert\Valid()
-   */
-  protected $tickets;
+    /**
+     * @ORM\OneToMany(targetEntity="Ticket", mappedBy="order", cascade={"persist"})
+     */
+    private $tickets;
 
-  /**
-   * @ORM\Column(name="paid", type="boolean")
-   * @Assert\Type("bool")
-   */
-  protected $paid = false;
 
-  /**
-   * Constructor
-   */
-  public function __construct()
-  {
-    $this->tickets = new ArrayCollection();
-    $this->orderDate = new \DateTime('now');
-  }
-
-  /**
-   * Get id
-   *
-   * @return integer
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
-
-  /**
-   * Set orderDate
-   *
-   * @param \DateTime $orderDate
-   */
-  public function setOrderDate($orderDate)
-  {
-    $this->orderDate = $orderDate;
-  }
-
-  /**
-   * Get orderDate
-   *
-   * @return \DateTime
-   */
-  public function getOrderDate()
-  {
-    return $this->orderDate;
-  }
-
-  /**
-   * Set mail
-   *
-   * @param string $mail
-   */
-  public function setMail($mail)
-  {
-    $this->mail = $mail;;
-  }
-
-  /**
-   * Get mail
-   *
-   * @return string
-   */
-  public function getMail()
-  {
-    return $this->mail;
-  }
-
-  /**
-   * Set visitDate
-   *
-   * @param \DateTime $visitDate
-   */
-  public function setVisitDate($visitDate)
-  {
-    $this->visitDate = $visitDate;
-  }
-
-  /**
-   * Get visitDate
-   *
-   * @return \DateTime
-   */
-  public function getVisitDate()
-  {
-    return $this->visitDate;
-  }
-
-  /**
-   * Set ticketsType
-   *
-   * @param string $ticketsType
-   */
-  public function setTicketsType($ticketsType)
-  {
-    $this->ticketsType = $ticketsType;
-  }
-
-  /**
-   * Get ticketsType
-   *
-   * @return string
-   */
-  public function getTicketsType()
-  {
-    return $this->ticketsType;
-  }
-
-  /**
-   * Set paid
-   *
-   * @param boolean $paid
-   */
-  public function setPaid($paid)
-  {
-    $this->paid = $paid;
-  }
-
-  /**
-   * Get paid
-   *
-   * @return boolean
-   */
-  public function getPaid()
-  {
-    return $this->paid;
-  }
-
-  /**
-   * Add ticket
-   *
-   * @param Ticket $ticket
-   */
-  public function addTicket(Ticket $ticket)
-  {
-    $this->tickets[] = $ticket;
-  }
-
-  /**
-   * Remove ticket
-   *
-   * @param Ticket $ticket
-   */
-  public function removeTicket(Ticket $ticket)
-  {
-    $this->tickets->removeElement($ticket);
-  }
-
-  /**
-   * Get tickets
-   *
-   * @return \Doctrine\Common\Collections\Collection
-   */
-  public function getTickets()
-  {
-    return $this->tickets;
-  }
-
-  // Custom functions :
-
-  /**
-   * Get nbTickets
-   *
-   * @return integer
-   */
-  public function getNbTickets()
-  {
-    return count($this->tickets);
-  }
-
-  /**
-   * Get TotalAmount
-   *
-   * @return integer
-   */
-  public function getTotalAmount()
-  {
-    $amount = 0;
-
-    foreach ($this->tickets as $ticket) {
-      $amount += $ticket->getPrice();
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
-    return $amount;
-  }
+    /**
+     * Set visitDate
+     *
+     * @param \DateTime $visitDate
+     *
+     * @return Order
+     */
+    public function setVisitDate($visitDate)
+    {
+        $this->visitDate = $visitDate;
 
-  /**
-   * Set TicketsOrder
-   */
-  public function setTicketsOrder()
-  {
-    foreach ($this->tickets as $ticket) {
-      $ticket->setOrder($this);
-    }
-  }
-
-  /**
-   * Set paid to true
-   */
-  public function markAsPaid()
-  {
-    if($this->paid === true) {
-      return;
+        return $this;
     }
 
-    $this->paid = true;
-
-    foreach ($this->tickets as $ticket) {
-      $ticket->generateValidationCode();
+    /**
+     * Get visitDate
+     *
+     * @return \DateTime
+     */
+    public function getVisitDate()
+    {
+        return $this->visitDate;
     }
-  }
+
+    /**
+     * Set ticketsType
+     *
+     * @param integer $ticketsType
+     *
+     * @return Order
+     */
+    public function setTicketsType($ticketsType)
+    {
+        $this->ticketsType = $ticketsType;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketsType
+     *
+     * @return int
+     */
+    public function getTicketsType()
+    {
+        return $this->ticketsType;
+    }
+
+    /**
+     * Set ticketsNbr
+     *
+     * @param integer $ticketsNbr
+     *
+     * @return Order
+     */
+    public function setTicketsNbr($ticketsNbr)
+    {
+        $this->ticketsNbr = $ticketsNbr;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketsNbr
+     *
+     * @return int
+     */
+    public function getTicketsNbr()
+    {
+        return $this->ticketsNbr;
+    }
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ticket
+     *
+     * @param \App\LouvreBundle\Entity\Ticket $ticket
+     *
+     * @return Order
+     */
+    public function addTicket(\App\LouvreBundle\Entity\Ticket $ticket)
+    {
+        $this->tickets[] = $ticket;
+
+        return $this;
+    }
+
+    /**
+     * Remove ticket
+     *
+     * @param \App\LouvreBundle\Entity\Ticket $ticket
+     */
+    public function removeTicket(\App\LouvreBundle\Entity\Ticket $ticket)
+    {
+        $this->tickets->removeElement($ticket);
+    }
+
+    /**
+     * Get tickets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTickets()
+    {
+        return $this->tickets;
+    }
+
+    /**
+     * Set orderCode
+     *
+     * @param string $orderCode
+     *
+     * @return Order
+     */
+    public function setOrderCode($orderCode)
+    {
+        $this->orderCode = $orderCode;
+
+        return $this;
+    }
+
+    /**
+     * Get orderCode
+     *
+     * @return string
+     */
+    public function getOrderCode()
+    {
+        return $this->orderCode;
+    }
 }

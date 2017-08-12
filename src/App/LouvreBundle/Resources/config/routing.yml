@@ -6,3 +6,10 @@ app_louvre_order:
     path:     /step/1
     defaults: { _controller: AppLouvreBundle:App:order }
 
+app_louvre_ticket:
+    path:     /step/2
+    defaults: { _controller: AppLouvreBundle:App:ticket }
+
+app_louvre_resum:
+    path:     /step/3
+    defaults: { _controller: AppLouvreBundle:App:resum }

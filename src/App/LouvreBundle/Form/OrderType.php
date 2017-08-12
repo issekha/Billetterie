@@ -3,12 +3,12 @@
 namespace App\LouvreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class OrderType extends AbstractType
 {
@@ -25,8 +25,8 @@ class OrderType extends AbstractType
             ])
             ->add('ticketsType',       ChoiceType::class, [
                 'choices'  => [
-                    'journée'      => 'journée',
-                    'demi-journée' => 'demi-journée',
+                    'journée'      => 1,
+                    'demi-journée' => 2,
                 ],
                 'label'    => 'Type de billets'
             ])
@@ -37,8 +37,13 @@ class OrderType extends AbstractType
                 'mapped'      => false,
             ])
             
-            ->add('Valider',              SubmitType::class)
-        ;
+            ->add('tickets', CollectionType::class, array(
+            'entry_type' => TicketType::class
+        	))
+			
+			->add('Valider',              SubmitType::class)
+			
+			;
     }
     
     /**

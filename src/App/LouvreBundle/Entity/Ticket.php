@@ -12,275 +12,318 @@ use App\LouvreBundle\entity\Order;
  */
 class Ticket
 {
-  const PRICE_FREE    = 0;
-  const PRICE_KID     = 800;
-  const PRICE_NORMAL  = 1600;
-  const PRICE_SENIOR  = 1200;
-  const PRICE_REDUCED = 1000;
-
   /**
-   * @ORM\Column(name="id", type="integer")
-   * @ORM\Id
-   * @ORM\GeneratedValue(strategy="AUTO")
-   */
-  protected $id;
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
-  /**
-   * @ORM\Column(name="name", type="string", length=255)
-   * @Assert\NotBlank(message="Veuillez entrer un nom.")
-   */
-  protected $name;
+    /**
+     * @var string
+     * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Votre nom doit au moins avoir une lougueur de 2 caractères",
+     *      maxMessage = "Votre nm ne peut pas avoir plus de 50 caractères"
+     * )
+     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
+     */
+    private $name;
 
-  /**
-   * @ORM\Column(name="first_name", type="string", length=255)
-   * @Assert\NotBlank(message="Veuillez entrer un prénom.")
-   */
-  protected $firstName;
+    /**
+     * @var string
+     * @ORM\Column(name="firstName", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Votre prénom doit au moins avoir une lougueur de 2 caractères",
+     *      maxMessage = "Votre prénom ne peut pas avoir plus de 50 caractères"
+     * )
+     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
+     */
+    private $firstName;
 
-  /**
-   * @ORM\Column(name="country", type="string")
-   * @Assert\Type("string")
-   */
-  protected $country;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birthDate", type="datetime")
+     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
+     * @Assert\Date(message="Date non valide")
+     */
+    private $birthDate;
 
-  /**
-   * @ORM\Column(name="birth_date", type="date")
-   * @Assert\DateTime()
-   */
-  protected $birthDate;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pays", type="string", length=255)
+     */
+    private $pays;
 
-  /**
-   * @ORM\Column(name="reduced", type="boolean")
-   * @Assert\Type("bool")
-   */
-  protected $reduced = false;
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="lowRate", type="boolean")
+     */
+    private $lowRate;
 
-  /**
-   * @ORM\Column(name="validation_code", type="string", nullable=true)
-   * @Assert\Type("string")
-   */
-  protected $validationCode;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticketsRate", type="integer")
+     */
+    private $ticketsRate;
 
-  /**
-   * @ORM\ManyToOne(targetEntity="App\LouvreBundle\Entity\Order", inversedBy="tickets", cascade={"persist"})
-   * @ORM\JoinColumn(name="order_id", referencedColumnName="id")
-   * @Assert\Type("object")
-   */
-  protected $order;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prix", type="integer", nullable=true)
+     */
+    private $prix;
 
-  /**
-   * @ORM\Column(name="used", type="boolean", nullable=true)
-   * @Assert\Type("bool")
-   */
-  protected $used = false;
+    /**
+     * @ORM\ManyToOne(targetEntity="Order", inversedBy="tickets")
+     */
+    private $order;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(message = "Ceci n’est pas une adresse email valide")
+     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
+     */
+    private $email;
 
-  /**
-   * Get id
-   *
-   * @return integer
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
 
-  /**
-   * Set name
-   *
-   * @param string $name
-   */
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-
-  /**
-   * Get name
-   *
-   * @return string
-   */
-  public function getName()
-  {
-    return $this->name;
-  }
-
-  /**
-   * Set firstName
-   *
-   * @param string $firstName
-   */
-  public function setFirstName($firstName)
-  {
-    $this->firstName = $firstName;
-  }
-
-  /**
-   * Get firstName
-   *
-   * @return string
-   */
-  public function getFirstName()
-  {
-    return $this->firstName;
-  }
-
-  /**
-   * Set country
-   *
-   * @param string $country
-   */
-  public function setCountry($country)
-  {
-    $this->country = $country;
-  }
-
-  /**
-   * Get country
-   *
-   * @return string
-   */
-  public function getCountry()
-  {
-    return $this->country;
-  }
-
-  /**
-   * Set birthDate
-   *
-   * @param \DateTime $birthDate
-   */
-  public function setBirthDate(\DateTime $birthDate)
-  {
-    $this->birthDate = $birthDate;
-  }
-
-  /**
-   * Get birthDate
-   *
-   * @return \DateTime
-   */
-  public function getBirthDate()
-  {
-    return $this->birthDate;
-  }
-
-  /**
-   * Set reduced
-   *
-   * @param boolean $reduced
-   */
-  public function setReduced($reduced)
-  {
-    $this->reduced = $reduced;
-  }
-
-  /**
-   * Get reduced
-   *
-   * @return boolean
-   */
-  public function getReduced()
-  {
-    return $this->reduced;
-  }
-
-  /**
-   * Set validationCode
-   *
-   * @param string $validationCode
-   */
-  public function setValidationCode($validationCode)
-  {
-    $this->validationCode = $validationCode;
-  }
-
-  /**
-   * Get validationCode
-   *
-   * @return string
-   */
-  public function getValidationCode()
-  {
-    return $this->validationCode;
-  }
-
-  /**
-   * Generate validationCode
-   */
-  public function generateValidationCode()
-  {
-    $code = substr(md5(random_int(100000, 999999)), 0, 10);
-    $this->validationCode = $code;
-  }
-
-  /**
-   * Set used
-   *
-   * @param boolean $used
-   */
-  public function setUsed($used)
-  {
-    $this->used = $used;
-  }
-
-  /**
-   * Get used
-   *
-   * @return boolean
-   */
-  public function getUsed()
-  {
-    return $this->used;
-  }
-
-  /**
-   * Set order
-   *
-   * @param \App\LouvreBundle\Entity\Order $order
-   */
-  public function setOrder(Order $order)
-  {
-    $this->order = $order;
-  }
-
-  /**
-   * Get order
-   *
-   * @return \App\LouvreBundle\Entity\Order
-   */
-  public function getOrder()
-  {
-    return $this->order;
-  }
-
-  // Custom functions :
-
-  /**
-   * Get price
-   *
-   * @return integer
-   */
-  public function getPrice()
-  {
-    $now = new \DateTime('now');
-    $age = $now->diff($this->birthDate)->y;
-
-    if ($age < 4) {
-      $price = self::PRICE_FREE;
-    } elseif ($age < 12) {
-      $price = self::PRICE_KID;
-    } elseif ($this->reduced) {
-      $price = self::PRICE_REDUCED;
-    } elseif ($age > 60) {
-      $price = self::PRICE_SENIOR;
-    } else {
-      $price = self::PRICE_NORMAL;
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
-    if ($this->order->getTicketsType() === 'demi-journée') {
-      return $price / 2;
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Ticket
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
-    return $price;
-  }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     *
+     * @return Ticket
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     *
+     * @return Ticket
+     */
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return \DateTime
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * Set lowRate
+     *
+     * @param boolean $lowRate
+     *
+     * @return Ticket
+     */
+    public function setLowRate($lowRate)
+    {
+        $this->lowRate = $lowRate;
+
+        return $this;
+    }
+
+    /**
+     * Get lowRate
+     *
+     * @return bool
+     */
+    public function getLowRate()
+    {
+        return $this->lowRate;
+    }
+
+    /**
+     * Set ticketsRate
+     *
+     * @param integer $ticketsRate
+     *
+     * @return Ticket
+     */
+    public function setTicketsRate($ticketsRate)
+    {
+        $this->ticketsRate = $ticketsRate;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketsRate
+     *
+     * @return int
+     */
+    public function getTicketsRate()
+    {
+        return $this->ticketsRate;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param string $pays
+     *
+     * @return Ticket
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return string
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+    /**
+     * Set order
+     *
+     * @param \MK\LouvreBundle\Entity\Order $order
+     *
+     * @return Ticket
+     */
+    public function setOrder(\MK\LouvreBundle\Entity\Order $order = null)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+    /**
+     * Get order
+     *
+     * @return \MK\LouvreBundle\Entity\Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Set prix
+     *
+     * @param integer $prix
+     *
+     * @return Ticket
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return integer
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+	
+	/**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Order
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 }
 

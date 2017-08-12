@@ -1,4 +1,15 @@
 services:
-#    app_louvre.example:
-#        class: App\LouvreBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    app_louvre.orderCode:
+        class: App\LouvreBundle\OrderCode\OrderCode 
+
+    app_louvre.tarif:
+        class: App\LouvreBundle\Calcul\TicketsRate
+
+    app_louvre.limit:
+        class: App\LouvreBundle\ValidTickets\ValidLimit
+
+    app_louvre.time:
+        class: App\LouvreBundle\ValidTickets\ValidTime
+        
+    app_louvre.email:
+        class: App\LouvreBundle\Email\ApplicationMailer
