@@ -21,96 +21,94 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c5df40a6884251890f8718f9cc7e165ab759ff5773dfc09bcdb60765f89a86fd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c5df40a6884251890f8718f9cc7e165ab759ff5773dfc09bcdb60765f89a86fd->enter($__internal_c5df40a6884251890f8718f9cc7e165ab759ff5773dfc09bcdb60765f89a86fd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:order.html.twig"));
+        $__internal_2b306bdd6530e4eff1cd25d3d7f86c1cdd4b1aceada762e9797bce11dc8aa4f9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2b306bdd6530e4eff1cd25d3d7f86c1cdd4b1aceada762e9797bce11dc8aa4f9->enter($__internal_2b306bdd6530e4eff1cd25d3d7f86c1cdd4b1aceada762e9797bce11dc8aa4f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:order.html.twig"));
 
-        $__internal_9157bd01acd623c2a8db24b329f6d694ce42b618e408ef4450c5a18235fc419d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9157bd01acd623c2a8db24b329f6d694ce42b618e408ef4450c5a18235fc419d->enter($__internal_9157bd01acd623c2a8db24b329f6d694ce42b618e408ef4450c5a18235fc419d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:order.html.twig"));
+        $__internal_3020b0e09ef75cb8883992fa58822aad4ec4433c7e3e947a7a4366a89cd534bb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3020b0e09ef75cb8883992fa58822aad4ec4433c7e3e947a7a4366a89cd534bb->enter($__internal_3020b0e09ef75cb8883992fa58822aad4ec4433c7e3e947a7a4366a89cd534bb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:order.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c5df40a6884251890f8718f9cc7e165ab759ff5773dfc09bcdb60765f89a86fd->leave($__internal_c5df40a6884251890f8718f9cc7e165ab759ff5773dfc09bcdb60765f89a86fd_prof);
+        $__internal_2b306bdd6530e4eff1cd25d3d7f86c1cdd4b1aceada762e9797bce11dc8aa4f9->leave($__internal_2b306bdd6530e4eff1cd25d3d7f86c1cdd4b1aceada762e9797bce11dc8aa4f9_prof);
 
         
-        $__internal_9157bd01acd623c2a8db24b329f6d694ce42b618e408ef4450c5a18235fc419d->leave($__internal_9157bd01acd623c2a8db24b329f6d694ce42b618e408ef4450c5a18235fc419d_prof);
+        $__internal_3020b0e09ef75cb8883992fa58822aad4ec4433c7e3e947a7a4366a89cd534bb->leave($__internal_3020b0e09ef75cb8883992fa58822aad4ec4433c7e3e947a7a4366a89cd534bb_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_0b217b0c64f901bfe29b056ab5cd5d1c561e4731a8779fa43768396a6944e9f0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0b217b0c64f901bfe29b056ab5cd5d1c561e4731a8779fa43768396a6944e9f0->enter($__internal_0b217b0c64f901bfe29b056ab5cd5d1c561e4731a8779fa43768396a6944e9f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_e341ebb5c945774b9ebbd8797a1686acb1caa2f3ea287d0d502f6bd44ae4bb74 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e341ebb5c945774b9ebbd8797a1686acb1caa2f3ea287d0d502f6bd44ae4bb74->enter($__internal_e341ebb5c945774b9ebbd8797a1686acb1caa2f3ea287d0d502f6bd44ae4bb74_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_fd3b514db1ea40a6b6d8c77ed0af6e5ba5f35e7b5d714daad8269deda5a39dd4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fd3b514db1ea40a6b6d8c77ed0af6e5ba5f35e7b5d714daad8269deda5a39dd4->enter($__internal_fd3b514db1ea40a6b6d8c77ed0af6e5ba5f35e7b5d714daad8269deda5a39dd4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_614d9f0675afa17addf8ade5a8e41118f81a9cbec9d813fbdf86935ff27e7d7b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_614d9f0675afa17addf8ade5a8e41118f81a9cbec9d813fbdf86935ff27e7d7b->enter($__internal_614d9f0675afa17addf8ade5a8e41118f81a9cbec9d813fbdf86935ff27e7d7b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "
- 
-      ";
-        // line 6
+\t";
+        // line 5
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "success"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 7
-            echo "      
-      <div class=\"alert alert-success\" style=\"width:52%\">
+            // line 6
+            echo "\t\t<div class=\"alert alert-success\" >
           ";
-            // line 9
+            // line 7
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
-      </div>
-    ";
+      \t</div>
+\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 12
-        echo "  <h1><strong>Etape 1:</strong> Votre commande </h1>
-  ";
-        // line 13
+        // line 10
+        echo "   
+\t";
+        // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "errors"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 14
-            echo "      
-      <div class=\"alert alert-danger\" style=\"width:52%\">
+            // line 12
+            echo "      \t<div class=\"alert alert-danger\">
           ";
-            // line 16
+            // line 13
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
-      </div>
-  ";
+      \t</div>
+  \t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
-        echo "  <hr>
+        // line 16
+        echo "    
+\t<h1><strong>Etape 1:</strong> Votre commande </h1>
+  \t<hr>
 \t<div id=\"orderForm\" class=\"well col-md-6 \">
 \t\t<div class=\" orderForm\">
-\t\t\t
 \t\t\t ";
-        // line 23
+        // line 21
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
         echo "
   
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t";
-        // line 26
+        // line 24
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "visitDate", array()), 'label', array("label_attr" => array("class" => "col-sm-4"), "label" => "Date de visite"));
         echo "
 
 \t\t\t\t\t";
-        // line 29
+        // line 27
         echo "\t\t\t\t\t";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "visitDate", array()), 'errors');
         echo "
 
 \t\t\t\t\t<div class=\"col-sm-6\">
 \t\t\t\t\t  ";
-        // line 33
+        // line 31
         echo "\t\t\t\t\t  ";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "visitDate", array()), 'widget', array("attr" => array("class" => "datepicker")));
         echo "
@@ -120,19 +118,19 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 \t\t\t\t\t<div class=\"form-group\">
 
 \t\t\t\t\t";
-        // line 39
+        // line 37
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'label', array("label_attr" => array("class" => "col-sm-4"), "label" => "Entrez votre Email "));
         echo "
 
 \t\t\t\t\t";
-        // line 42
+        // line 40
         echo "\t\t\t\t\t";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'errors');
         echo "
 
 \t\t\t\t\t<div class=\"col-sm-6\">
 \t\t\t\t\t  ";
-        // line 46
+        // line 44
         echo "\t\t\t\t\t  ";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
@@ -141,20 +139,20 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 \t\t\t\t
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t";
-        // line 52
+        // line 50
         echo "\t\t\t\t\t";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ticketsType", array()), 'label', array("label_attr" => array("class" => "col-sm-4"), "label" => "Choix de billet"));
         echo "
 
 \t\t\t\t\t";
-        // line 55
+        // line 53
         echo "\t\t\t\t\t";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ticketsType", array()), 'errors');
         echo "
 
 \t\t\t\t\t<div class=\"col-sm-6\">
 \t\t\t\t\t  ";
-        // line 59
+        // line 57
         echo "\t\t\t\t\t  ";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ticketsType", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
@@ -163,79 +161,60 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 \t\t\t  
 \t\t\t\t  <span class=\"form-group\">
 \t\t\t\t\t";
-        // line 65
+        // line 63
         echo "\t\t\t\t\t";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ticketsNbr", array()), 'label', array("label_attr" => array("class" => "col-sm-4"), "label" => "Nombre de billet"));
         echo "
 
 \t\t\t\t\t";
-        // line 68
+        // line 66
         echo "\t\t\t\t\t";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ticketsNbr", array()), 'errors');
         echo "
 
 \t\t\t\t\t<span class=\"col-sm-4\">
 \t\t\t\t\t  ";
-        // line 72
+        // line 70
         echo "\t\t\t\t\t  ";
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ticketsNbr", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
 \t\t\t\t\t</span>
-\t\t\t\t\t
-\t\t\t\t\t
 \t\t\t\t\t<input formnovalidate type=\"submit\" id=\"stp1bouton\" class=\"btn btn-primary\" value=\"Valider\" />
-\t\t\t\t
-\t\t\t  
 \t\t\t\t  </span>
-\t\t\t\t  
-\t\t\t\t  
-\t\t\t\t  \t
-\t\t\t\t  
 
-\t\t\t\t
-\t\t\t\t  \t
-\t\t\t\t  
-
-";
-        // line 89
+\t\t\t";
+        // line 75
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-\t\t\t
+\t
 \t\t</div>
 \t</div>
  
    <div id=\"infosHoraires\" class=\"col-md-4\">
   \t\t<div class=\"row col-md-8\">
 \t\t
-\t\t<div class=\"panel panel-default\">
-  \t<div class=\"panel-heading\">
-  \t  <h3 class=\"panel-title\">Horaires :</h3>
-  \t</div>
-  \t<ul class=\"list-group\">
-      <li class=\"list-group-item\">Lundi    : 09h00-18h00</li>
-      <li class=\"list-group-item\"><strong>Mardi    : Fermé</strong></li>
-      <li class=\"list-group-item\">Mercredi : 09h00-21h45</li>
-      <li class=\"list-group-item\">Jeudi    : 09h00-18h00</li>
-      <li class=\"list-group-item\">Vendredi : 09h00-21h45</li>
-      <li class=\"list-group-item\">Samedi   : 09h00-18h00</li>
-      <li class=\"list-group-item\"><strong>Dimanche    : Fermé</strong></li>
-    </ul>
+\t\t\t<div class=\"panel panel-default\">
+  \t\t\t\t<div class=\"panel-heading\">
+  \t  \t\t\t\t<h3 class=\"panel-title\">Horaires :</h3>
+  \t\t\t\t</div>
+\t\t\t\t<ul class=\"list-group\">
+\t\t\t\t  <li class=\"list-group-item\">Lundi    : 09h00-18h00</li>
+\t\t\t\t  <li class=\"list-group-item\"><strong>Mardi    : Fermé</strong></li>
+\t\t\t\t  <li class=\"list-group-item\">Mercredi : 09h00-21h45</li>
+\t\t\t\t  <li class=\"list-group-item\">Jeudi    : 09h00-18h00</li>
+\t\t\t\t  <li class=\"list-group-item\">Vendredi : 09h00-21h45</li>
+\t\t\t\t  <li class=\"list-group-item\">Samedi   : 09h00-18h00</li>
+\t\t\t\t  <li class=\"list-group-item\"><strong>Dimanche    : Fermé</strong></li>
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t</div>
   </div>
-</div>
-  </div>
-\t
-
- 
-
-  
-  
-
 ";
         
-        $__internal_fd3b514db1ea40a6b6d8c77ed0af6e5ba5f35e7b5d714daad8269deda5a39dd4->leave($__internal_fd3b514db1ea40a6b6d8c77ed0af6e5ba5f35e7b5d714daad8269deda5a39dd4_prof);
+        $__internal_614d9f0675afa17addf8ade5a8e41118f81a9cbec9d813fbdf86935ff27e7d7b->leave($__internal_614d9f0675afa17addf8ade5a8e41118f81a9cbec9d813fbdf86935ff27e7d7b_prof);
 
         
-        $__internal_0b217b0c64f901bfe29b056ab5cd5d1c561e4731a8779fa43768396a6944e9f0->leave($__internal_0b217b0c64f901bfe29b056ab5cd5d1c561e4731a8779fa43768396a6944e9f0_prof);
+        $__internal_e341ebb5c945774b9ebbd8797a1686acb1caa2f3ea287d0d502f6bd44ae4bb74->leave($__internal_e341ebb5c945774b9ebbd8797a1686acb1caa2f3ea287d0d502f6bd44ae4bb74_prof);
 
     }
 
@@ -251,7 +230,7 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 
     public function getDebugInfo()
     {
-        return array (  201 => 89,  180 => 72,  173 => 68,  167 => 65,  158 => 59,  151 => 55,  145 => 52,  136 => 46,  129 => 42,  124 => 39,  114 => 33,  107 => 29,  102 => 26,  96 => 23,  90 => 19,  81 => 16,  77 => 14,  73 => 13,  70 => 12,  61 => 9,  57 => 7,  53 => 6,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  187 => 75,  178 => 70,  171 => 66,  165 => 63,  156 => 57,  149 => 53,  143 => 50,  134 => 44,  127 => 40,  122 => 37,  112 => 31,  105 => 27,  100 => 24,  94 => 21,  87 => 16,  78 => 13,  75 => 12,  71 => 11,  68 => 10,  59 => 7,  56 => 6,  52 => 5,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -268,24 +247,22 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 
 {% block content %}
 
- 
-      {% for flashMessage in app.session.flashbag.get('success') %}
-      
-      <div class=\"alert alert-success\" style=\"width:52%\">
+\t{% for flashMessage in app.session.flashbag.get('success') %}
+\t\t<div class=\"alert alert-success\" >
           {{ flashMessage }}
-      </div>
-    {% endfor %}
-  <h1><strong>Etape 1:</strong> Votre commande </h1>
-  {% for flashMessage in app.session.flashbag.get('errors') %}
-      
-      <div class=\"alert alert-danger\" style=\"width:52%\">
+      \t</div>
+\t{% endfor %}
+   
+\t{% for flashMessage in app.session.flashbag.get('errors') %}
+      \t<div class=\"alert alert-danger\">
           {{ flashMessage }}
-      </div>
-  {% endfor %}
-  <hr>
+      \t</div>
+  \t{% endfor %}
+    
+\t<h1><strong>Etape 1:</strong> Votre commande </h1>
+  \t<hr>
 \t<div id=\"orderForm\" class=\"well col-md-6 \">
 \t\t<div class=\" orderForm\">
-\t\t\t
 \t\t\t {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
   
 \t\t\t\t<div class=\"form-group\">
@@ -337,52 +314,33 @@ class __TwigTemplate_b5fcc44a138fe1f7c4aa08be766f76788aed9827cc76ca817f481394852
 \t\t\t\t\t  {# Génération de l'input. #}
 \t\t\t\t\t  {{ form_widget(form.ticketsNbr, {'attr': {'class': 'form-control'}}) }}
 \t\t\t\t\t</span>
-\t\t\t\t\t
-\t\t\t\t\t
 \t\t\t\t\t<input formnovalidate type=\"submit\" id=\"stp1bouton\" class=\"btn btn-primary\" value=\"Valider\" />
-\t\t\t\t
-\t\t\t  
 \t\t\t\t  </span>
-\t\t\t\t  
-\t\t\t\t  
-\t\t\t\t  \t
-\t\t\t\t  
 
-\t\t\t\t
-\t\t\t\t  \t
-\t\t\t\t  
-
-{{ form_end(form) }}
-\t\t\t
+\t\t\t{{ form_end(form) }}
+\t
 \t\t</div>
 \t</div>
  
    <div id=\"infosHoraires\" class=\"col-md-4\">
   \t\t<div class=\"row col-md-8\">
 \t\t
-\t\t<div class=\"panel panel-default\">
-  \t<div class=\"panel-heading\">
-  \t  <h3 class=\"panel-title\">Horaires :</h3>
-  \t</div>
-  \t<ul class=\"list-group\">
-      <li class=\"list-group-item\">Lundi    : 09h00-18h00</li>
-      <li class=\"list-group-item\"><strong>Mardi    : Fermé</strong></li>
-      <li class=\"list-group-item\">Mercredi : 09h00-21h45</li>
-      <li class=\"list-group-item\">Jeudi    : 09h00-18h00</li>
-      <li class=\"list-group-item\">Vendredi : 09h00-21h45</li>
-      <li class=\"list-group-item\">Samedi   : 09h00-18h00</li>
-      <li class=\"list-group-item\"><strong>Dimanche    : Fermé</strong></li>
-    </ul>
+\t\t\t<div class=\"panel panel-default\">
+  \t\t\t\t<div class=\"panel-heading\">
+  \t  \t\t\t\t<h3 class=\"panel-title\">Horaires :</h3>
+  \t\t\t\t</div>
+\t\t\t\t<ul class=\"list-group\">
+\t\t\t\t  <li class=\"list-group-item\">Lundi    : 09h00-18h00</li>
+\t\t\t\t  <li class=\"list-group-item\"><strong>Mardi    : Fermé</strong></li>
+\t\t\t\t  <li class=\"list-group-item\">Mercredi : 09h00-21h45</li>
+\t\t\t\t  <li class=\"list-group-item\">Jeudi    : 09h00-18h00</li>
+\t\t\t\t  <li class=\"list-group-item\">Vendredi : 09h00-21h45</li>
+\t\t\t\t  <li class=\"list-group-item\">Samedi   : 09h00-18h00</li>
+\t\t\t\t  <li class=\"list-group-item\"><strong>Dimanche    : Fermé</strong></li>
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t</div>
   </div>
-</div>
-  </div>
-\t
-
- 
-
-  
-  
-
 {% endblock %}", "AppLouvreBundle:App:order.html.twig", "C:\\wamp64\\www\\Billetterie\\src\\App\\LouvreBundle/Resources/views/App/order.html.twig");
     }
 }

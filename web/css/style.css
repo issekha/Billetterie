@@ -91,3 +91,6 @@ select{
 #ticketsResume{
 	text-align: left;
 }
+.ticketsList{
+	visibility: hidden;
+}

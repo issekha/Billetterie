@@ -31,9 +31,9 @@ class ValidLimit
         $lim = intval($lim);
         
         $lim1 = $lim + $session->get('ticketsNbr');
-        if ($lim1 > 5){
+        if ($lim1 > 1000){
           $session->clear();
-          $session->getFlashBag()->add('errors', 'Veuillez choisir une autre date, cette date est pleine');
+          $session->getFlashBag()->add('errors', 'Tous les billets pour cette date ont été vendus, merci de choisir une autre date');
           return $redirection;
         }
         else{

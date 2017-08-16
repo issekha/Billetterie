@@ -12,6 +12,9 @@ use App\LouvreBundle\Form\OrderType;
 use App\LouvreBundle\Entity\Ticket;
 use App\LouvreBundle\Form\TicketType;
 use App\LouvreBundle\Form\TicketsListType;
+use Stripe\Stripe;
+use stripe\Charge;
+use Stripe\Error\Card;
 
 class AppController extends Controller
 {
@@ -199,18 +202,21 @@ class AppController extends Controller
 		    $email->sendEmail($mailBodyHTML, $mailer);
 			
 			//Service Stripe
+			
             \Stripe\Stripe::setApiKey("sk_test_8vdRwzS3fzDSSYAyG6I8VQir");
-            \Stripe\Charge::create(array(
+			$token = $_POST['stripeToken'];
+			
+            $charge = \Stripe\Charge::create(array(
 				"amount" => $prix * 100,
 				"currency" => "eur",
+				"description" => "Billetterie musée du Louvre",
 				"source" => $token,
-				"description" => "Billet de reservation",
-				"receipt_email" => "email",
+				
               ));
 
-            $session->getFlashBag()->add('success', 'Paiement validé !');
+            $session->getFlashBag()->add('success', 'Votre commande a été validée, vous recevrez vos billets par email, Merci de votre achat.');
             $session->clear();
-            return $this->redirectToRoute('app_louvre_order');
+            return $this->redirectToRoute('app_louvre_homePage');
         }
 
         return $this->render('AppLouvreBundle:App:paiement.html.twig', array(

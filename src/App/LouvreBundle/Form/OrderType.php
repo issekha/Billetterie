@@ -19,17 +19,19 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-			->add('visitDate',  DateType::class, array(
+			->add('visitDate',  DateType::class, [
 				'widget' => 'single_text',
 				'html5' => false,
 				'format' => 'dd/MM/yyyy',
-				'attr' => ['class' => 'datepicker']))
+				'attr' => ['class' => 'datepicker']
+			])
 
-			->add('ticketsType',     ChoiceType::class, array(
-				'choices' => array(
+			->add('ticketsType',     ChoiceType::class, [
+				'choices' => [
 					'Journée'  => 1,
 					'Demi-journée' => 2,
-				)))
+				]
+			])
 
 			->add('ticketsNbr',         ChoiceType::class, [
 
@@ -39,9 +41,10 @@ class OrderType extends AbstractType
 
 			->add('email',     EmailType::class)
 
-			->add('tickets', CollectionType::class, array(
-				'entry_type' => TicketType::class
-        	));
+			->add('tickets', CollectionType::class, [
+				'entry_type' => TicketType::class,
+				'label_attr'=>['class'=> 'ticketsList']
+        	]);
     }
 
     
@@ -50,9 +53,7 @@ class OrderType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'App\LouvreBundle\Entity\Order'
-        ));
+        $resolver->setDefaults(['data_class' => 'App\LouvreBundle\Entity\Order']);
     }
 
     /**

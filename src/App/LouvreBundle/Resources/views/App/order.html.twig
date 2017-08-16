@@ -2,24 +2,22 @@
 
 {% block content %}
 
- 
-      {% for flashMessage in app.session.flashbag.get('success') %}
-      
-      <div class="alert alert-success" style="width:52%">
+	{% for flashMessage in app.session.flashbag.get('success') %}
+		<div class="alert alert-success" >
           {{ flashMessage }}
-      </div>
-    {% endfor %}
-  <h1><strong>Etape 1:</strong> Votre commande </h1>
-  {% for flashMessage in app.session.flashbag.get('errors') %}
-      
-      <div class="alert alert-danger" style="width:52%">
+      	</div>
+	{% endfor %}
+   
+	{% for flashMessage in app.session.flashbag.get('errors') %}
+      	<div class="alert alert-danger">
           {{ flashMessage }}
-      </div>
-  {% endfor %}
-  <hr>
+      	</div>
+  	{% endfor %}
+    
+	<h1><strong>Etape 1:</strong> Votre commande </h1>
+  	<hr>
 	<div id="orderForm" class="well col-md-6 ">
 		<div class=" orderForm">
-			
 			 {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
   
 				<div class="form-group">
@@ -71,50 +69,31 @@
 					  {# Génération de l'input. #}
 					  {{ form_widget(form.ticketsNbr, {'attr': {'class': 'form-control'}}) }}
 					</span>
-					
-					
 					<input formnovalidate type="submit" id="stp1bouton" class="btn btn-primary" value="Valider" />
-				
-			  
 				  </span>
-				  
-				  
-				  	
-				  
 
-				
-				  	
-				  
-
-{{ form_end(form) }}
-			
+			{{ form_end(form) }}
+	
 		</div>
 	</div>
  
    <div id="infosHoraires" class="col-md-4">
   		<div class="row col-md-8">
 		
-		<div class="panel panel-default">
-  	<div class="panel-heading">
-  	  <h3 class="panel-title">Horaires :</h3>
-  	</div>
-  	<ul class="list-group">
-      <li class="list-group-item">Lundi    : 09h00-18h00</li>
-      <li class="list-group-item"><strong>Mardi    : Fermé</strong></li>
-      <li class="list-group-item">Mercredi : 09h00-21h45</li>
-      <li class="list-group-item">Jeudi    : 09h00-18h00</li>
-      <li class="list-group-item">Vendredi : 09h00-21h45</li>
-      <li class="list-group-item">Samedi   : 09h00-18h00</li>
-      <li class="list-group-item"><strong>Dimanche    : Fermé</strong></li>
-    </ul>
+			<div class="panel panel-default">
+  				<div class="panel-heading">
+  	  				<h3 class="panel-title">Horaires :</h3>
+  				</div>
+				<ul class="list-group">
+				  <li class="list-group-item">Lundi    : 09h00-18h00</li>
+				  <li class="list-group-item"><strong>Mardi    : Fermé</strong></li>
+				  <li class="list-group-item">Mercredi : 09h00-21h45</li>
+				  <li class="list-group-item">Jeudi    : 09h00-18h00</li>
+				  <li class="list-group-item">Vendredi : 09h00-21h45</li>
+				  <li class="list-group-item">Samedi   : 09h00-18h00</li>
+				  <li class="list-group-item"><strong>Dimanche    : Fermé</strong></li>
+				</ul>
+			</div>
+		</div>
   </div>
-</div>
-  </div>
-	
-
- 
-
-  
-  
-
 {% endblock %}

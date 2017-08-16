@@ -5,7 +5,7 @@
   
   <h1><strong>Etape 2:</strong> Vos billets </h1>
   {% for flashMessage in app.session.flashbag.get('errors') %}
-      <div class="alert alert-danger" style="width:52%">
+      <div class="alert alert-danger">
           {{ flashMessage }}
       </div>
   {% endfor %}

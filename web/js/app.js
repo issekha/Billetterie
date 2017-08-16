@@ -21,33 +21,7 @@ jQuery(document).ready(function ($) {
     	
 	});
 	
-	$( ".datepickerBday").datepicker({
-        dateFormat: 'dd/mm/yy',
-      	changeMonth: true,
-		autoclose:"true",
-		todayBtn: "linked",
-    	language: "fr",
-      	changeYear: true,
-      	yearRange: "-100:+0",
-	  	beforeShowDay: function (date, inst) {
-		  var today = new Date();
-
-              today = Date.parse(today.getMonth()+1+'/'+today.getDate()+'/'+today.getFullYear());
-
-              var selDate = Date.parse(date);
-
-              if (selDate > today) {
-                  $('.datepicker').val('');
-                  $(inst).datepicker('show');
-                  return [false, ''];
-              } 
-              else {
-                  return [true, ''];
-              }
-
-            }
-    });
-	
+		
 	$(':checkbox').change(function() {
             var id = 'msg_' + $(this).attr('id');
             if ($(this).is(':checked')) {
@@ -69,7 +43,7 @@ jQuery(document).ready(function ($) {
 		exp_year: $('.card-expiry-year').val()
 	  }, 
 	  function (status, response) {
-		if (response.error) { // Ah une erreur !
+		if (response.error) { 
 		  // On affiche les erreurs
 		  $form.find('.payment-errors').text(response.error.message);
 		  $form.find('button').prop('disabled', false); // On réactive le bouton
