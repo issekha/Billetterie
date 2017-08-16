@@ -5,10 +5,11 @@ namespace App\LouvreBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class OrderType extends AbstractType
 {
@@ -18,33 +19,31 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('visitDate',         DateType::class, [
-                'label' => 'Date de visite',
-                'data'  => new \Datetime(),
-                'years' => range(date('Y'), date('Y') + 2),
-            ])
-            ->add('ticketsType',       ChoiceType::class, [
-                'choices'  => [
-                    'journée'      => 1,
-                    'demi-journée' => 2,
-                ],
-                'label'    => 'Type de billets'
-            ])
-            ->add('nbTickets',         ChoiceType::class, [
-                'placeholder' => 'Choisir une quantité',
-                'choices'     => array_combine(range(1,10),range(1,10)),
-                'label'       => 'Nombre de ticket(s)',
-                'mapped'      => false,
-            ])
-            
-            ->add('tickets', CollectionType::class, array(
-            'entry_type' => TicketType::class
-        	))
-			
-			->add('Valider',              SubmitType::class)
-			
-			;
+			->add('visitDate',  DateType::class, array(
+				'widget' => 'single_text',
+				'html5' => false,
+				'format' => 'dd/MM/yyyy',
+				'attr' => ['class' => 'datepicker']))
+
+			->add('ticketsType',     ChoiceType::class, array(
+				'choices' => array(
+					'Journée'  => 1,
+					'Demi-journée' => 2,
+				)))
+
+			->add('ticketsNbr',         ChoiceType::class, [
+
+					'choices'     => array_combine(range(1,10),range(1,10)),
+					'label'       => 'Nombre de ticket(s)',
+				 ])
+
+			->add('email',     EmailType::class)
+
+			->add('tickets', CollectionType::class, array(
+				'entry_type' => TicketType::class
+        	));
     }
+
     
     /**
      * {@inheritdoc}
@@ -63,4 +62,6 @@ class OrderType extends AbstractType
     {
         return 'app_louvrebundle_order';
     }
+
+
 }

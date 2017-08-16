@@ -3,8 +3,9 @@
 namespace App\LouvreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Order
@@ -46,7 +47,15 @@ class Order
      */
     private $ticketsNbr;
 
-   
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(message = "Ceci n’est pas une adresse email valide")
+     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
+     */
+    private $email;
+
     /**
      * @var string
      *
@@ -142,7 +151,29 @@ class Order
         return $this->ticketsNbr;
     }
 
-    
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Order
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
     /**
      * Constructor
      */

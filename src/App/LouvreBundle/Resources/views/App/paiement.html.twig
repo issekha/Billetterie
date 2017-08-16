@@ -1,0 +1,36 @@
+{% extends "AppLouvreBundle::layout.html.twig" %}
+
+{% block content %}
+
+  
+  <h1><strong>Etape 4:</strong> Procédez au paiement</h1>
+  
+  
+
+  <hr>
+<div class="well ">
+<div class="nav-space-checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-sm-12">
+               
+                <form action="" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_JnHnHbzCKM5CxeKzQyI3YfWk"
+                  data-amount={{ prix * 100}}
+                  data-name="Musée du louvre"
+                  data-label="Acheter"
+                  data-email="{{email}}"
+                  data-description="Billetterie du musée du Louvre"
+                  data-locale="auto"
+                  data-currency="eur">
+                </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

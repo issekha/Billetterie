@@ -1,3 +1,16 @@
+.lab + div{
+	display: none;
+}
+.valid{
+	
+}
+.emailAndValid{
+	width: 0px;
+      padding: 0px;
+      margin: 0px;
+      display:inline;
+}
+
 body { 
     padding-top: 50px; 
 }
@@ -7,13 +20,7 @@ body {
     padding-top: 10px;
     text-align: center;
 }
-.articleTitle:hover, .articleTitle:focus {
-    text-decoration: none;
-}
-.adminTable {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+
 .view {
     /* The image used */
     background-image: url("../images/mdl_cover.jpg");
@@ -41,4 +48,46 @@ h1, .well,.row,.form-group, h3{
 }
 ul{
 	list-style:none;
+}
+
+.orderForm{
+	padding-left: 10%;
+}
+#orderForm{
+	margin-left: 10%;
+	
+}
+#stp1bouton{
+	float: left;
+	
+}
+#infosHoraires{
+	padding-left: 5%;
+	
+}
+#infosTarifs{
+	padding-left: 5%;
+	
+}
+#ticketsForm{
+	margin-left: 5%;
+	
+}
+select{
+	width: 33%;
+	height: auto;
+}
+.checkbox{
+	width: 10%;
+	height: auto;
+}
+#resume, #blockResume{
+	margin-left: 17%;
+	
+}
+#total1{
+	margin-left: 25%;
+}
+#ticketsResume{
+	text-align: left;
 }

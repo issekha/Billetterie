@@ -1,89 +1,120 @@
 {% extends "AppLouvreBundle::layout.html.twig" %}
 
+{% block content %}
 
-{% block body %}
-
-  <h2>Etape 1</h2>
-  
-  {% for type, messages in app.session.flashbag.all %}
-    {% for message in messages %}
-      {%if type == 'error'%} {% set type = 'danger' %} {%endif%}
-        <div class="alert alert-{{ type }}">
-            {{ message|raw }}
-        </div>
+ 
+      {% for flashMessage in app.session.flashbag.get('success') %}
+      
+      <div class="alert alert-success" style="width:52%">
+          {{ flashMessage }}
+      </div>
     {% endfor %}
+  <h1><strong>Etape 1:</strong> Votre commande </h1>
+  {% for flashMessage in app.session.flashbag.get('errors') %}
+      
+      <div class="alert alert-danger" style="width:52%">
+          {{ flashMessage }}
+      </div>
   {% endfor %}
+  <hr>
+	<div id="orderForm" class="well col-md-6 ">
+		<div class=" orderForm">
+			
+			 {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+  
+				<div class="form-group">
+					{{ form_label(form.visitDate, "Date de visite", {'label_attr': {'class': 'col-sm-4'}}) }}
 
-	 <div class="container">
+					{# Affichage des erreurs pour ce champ précis. #}
+					{{ form_errors(form.visitDate) }}
 
-    <div class="row">
-      <div id="content" class="col-sm-12 col-md-8">
-       		<div class="well">
-       		
-       			{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+					<div class="col-sm-6">
+					  {# Génération de l'input. #}
+					  {{ form_widget(form.visitDate, {'attr': {'class': 'datepicker'}}) }}
+					</div>
+				</div>
+				
+					<div class="form-group">
 
-       		
-       				<fieldset>
-						
-						<div class="form-group">
-							
-							{{ form_errors(form.visitDate) }}
-							{{ form_widget(form.visitDate, {'attr': {'class': 'datpicker'}}) }}
-						</div>
-						<br/>
-						<div class="form-group">
-							
-								{{ form_widget(form.ticketsType) }}
-						</div>
-						<div class="form-group">
-							
-							{{ form_widget(form.nbTickets, {'attr': {'required': 'required'}}) }}
-						</div>
-							
+					{{ form_label(form.email, "Entrez votre Email ", {'label_attr': {'class': 'col-sm-4', }}) }}
 
-					</fieldset>
-		{{ form_widget(form._token) }}
-		{{ form_rest(form) }}
-   				
-   				
-   				{{ form_end(form) }}
-   				
-   				
-  			</div>
-      </div>
-      <div id="right-widget" class="col-md-4 ticket-stats hidden-sm hidden-xs">
-        <h2>Actuellement</h2>
-        
-      </div>
-    </div>
+					{# Affichage des erreurs pour ce champ précis. #}
+					{{ form_errors(form.email) }}
 
-    
+					<div class="col-sm-6">
+					  {# Génération de l'input. #}
+					  {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+					</div>
+					</div>
+				
+				<div class="form-group">
+					{# Génération du label. #}
+					{{ form_label(form.ticketsType, "Choix de billet", {'label_attr': {'class': 'col-sm-4'}}) }}
+
+					{# Affichage des erreurs pour ce champ précis. #}
+					{{ form_errors(form.ticketsType) }}
+
+					<div class="col-sm-6">
+					  {# Génération de l'input. #}
+					  {{ form_widget(form.ticketsType, {'attr': {'class': 'form-control'}}) }}
+					</div>
+				</div>
+			  
+				  <span class="form-group">
+					{# Génération du label. #}
+					{{ form_label(form.ticketsNbr, "Nombre de billet", {'label_attr': {'class': 'col-sm-4'}}) }}
+
+					{# Affichage des erreurs pour ce champ précis. #}
+					{{ form_errors(form.ticketsNbr) }}
+
+					<span class="col-sm-4">
+					  {# Génération de l'input. #}
+					  {{ form_widget(form.ticketsNbr, {'attr': {'class': 'form-control'}}) }}
+					</span>
+					
+					
+					<input formnovalidate type="submit" id="stp1bouton" class="btn btn-primary" value="Valider" />
+				
+			  
+				  </span>
+				  
+				  
+				  	
+				  
+
+				
+				  	
+				  
+
+{{ form_end(form) }}
+			
+		</div>
+	</div>
+ 
+   <div id="infosHoraires" class="col-md-4">
+  		<div class="row col-md-8">
+		
+		<div class="panel panel-default">
+  	<div class="panel-heading">
+  	  <h3 class="panel-title">Horaires :</h3>
+  	</div>
+  	<ul class="list-group">
+      <li class="list-group-item">Lundi    : 09h00-18h00</li>
+      <li class="list-group-item"><strong>Mardi    : Fermé</strong></li>
+      <li class="list-group-item">Mercredi : 09h00-21h45</li>
+      <li class="list-group-item">Jeudi    : 09h00-18h00</li>
+      <li class="list-group-item">Vendredi : 09h00-21h45</li>
+      <li class="list-group-item">Samedi   : 09h00-18h00</li>
+      <li class="list-group-item"><strong>Dimanche    : Fermé</strong></li>
+    </ul>
+  </div>
+</div>
   </div>
 	
+
+ 
+
   
-
-   <!-- Modal -->
-  <div id="modal-price" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Conditions et justificatis tarif réduit :</h4>
-        </div>
-        <div class="modal-body">
-            <p>Le billet tarif réduit est appliqué sous certaines conditions, à savoir les statuts suivant sont éligibles* à cette réduction : employé du musée, d’un service du Ministère de la Culture, militaire, étudiant, chercheur d'emploi...</p>
-            <small>* Sous réserve de présenter le justificatif adéqute (carte d'étudiant, statut pôle emploi, etc...).</small>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   
 
 {% endblock %}

@@ -1,0 +1,52 @@
+<h2> Commande numero : {{ orderCode }} </h2><br />
+
+
+<strong>Adresse e-mail</strong> : {{ email }} <br />
+
+<strong>Date de la réservation</strong> : {{ date_reservation|date("d/m/Y") }} <br />
+
+<strong>Type de billet</strong> : 
+
+{% if type_billet == 1%} 
+Journée 
+
+{% elseif type_billet == 2 %}
+Demi-Journée
+{% endif %}
+<br />
+
+<strong>Nombre de billet</strong> : {{ nombre_billet }} <br />
+
+<strong>Numéro de Commande</strong> : {{ orderCode }} <br />
+
+ <br />
+
+{% for tickets in nom %}
+  
+<strong>Nom</strong> : {{ tickets.name }} <br /> 
+<strong>Prenom</strong> : {{ tickets.firstName }} <br />
+<strong>date de naissance</strong> : {{tickets.birthDate|date("d/m/Y")}} <br />
+<strong>Nationalité</strong> : {{tickets.pays}} <br />
+<strong>Tarif réduit</strong> : 
+{% if tickets.lowRate == true %} 
+Oui
+{% elseif tickets.lowRate == false %}
+Non
+{% endif %}
+<br />
+<strong>Type de tarif</strong> : 
+{% if tickets.ticketsRate == 1 %} 
+Enfant
+{% elseif tickets.ticketsRate == 2 %}
+Normal
+{% elseif tickets.ticketsRate == 3 %}
+Senior
+{% elseif tickets.ticketsRate == 4 %}
+Tarif réduit
+{% endif %}
+<br />
+<strong>prix</strong> : {{tickets.prix}}€
+ <hr>
+ {% endfor %}
+
+<strong>Total prix</strong> : {{total}}€

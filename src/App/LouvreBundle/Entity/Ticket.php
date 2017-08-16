@@ -2,17 +2,20 @@
 
 namespace App\LouvreBundle\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
-use App\LouvreBundle\entity\Order;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
+ * Ticket
+ *
  * @ORM\Table(name="app_ticket")
  * @ORM\Entity(repositoryClass="App\LouvreBundle\Repository\TicketRepository")
  */
 class Ticket
 {
-  /**
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -89,15 +92,6 @@ class Ticket
      * @ORM\ManyToOne(targetEntity="Order", inversedBy="tickets")
      */
     private $order;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     * @Assert\Email(message = "Ceci n’est pas une adresse email valide")
-     * @Assert\NotBlank(message="Ce champ ne peux pas être vide")
-     */
-    private $email;
 
 
     /**
@@ -257,11 +251,11 @@ class Ticket
     /**
      * Set order
      *
-     * @param \MK\LouvreBundle\Entity\Order $order
+     * @param \App\LouvreBundle\Entity\Order $order
      *
      * @return Ticket
      */
-    public function setOrder(\MK\LouvreBundle\Entity\Order $order = null)
+    public function setOrder(\App\LouvreBundle\Entity\Order $order = null)
     {
         $this->order = $order;
 
@@ -271,7 +265,7 @@ class Ticket
     /**
      * Get order
      *
-     * @return \MK\LouvreBundle\Entity\Order
+     * @return \App\LouvreBundle\Entity\Order
      */
     public function getOrder()
     {
@@ -301,29 +295,4 @@ class Ticket
     {
         return $this->prix;
     }
-	
-	/**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Order
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
 }
-

@@ -1,0 +1,78 @@
+{% extends "AppLouvreBundle::layout.html.twig" %}
+
+{% block content %}
+
+  <h1><strong>Etape 3:</strong> Récapitulatif de votre commande </h1> 
+
+  <hr>
+<div class="well col-md-8" id="resume">
+
+<strong>Adresse e-mail</strong> : {{ email }} <br />
+
+<strong>Date de la réservation</strong> : {{ date_reservation|date("d/m/Y") }} <br />
+
+<strong>Type de billet</strong> : 
+
+{% if type_billet == 1%} 
+Journée 
+
+{% elseif type_billet == 2 %}
+Demi-Journée
+{% endif %}
+<br />
+
+<strong>Nombre de billet(s)</strong> : {{ nombre_billet }} <br />
+
+<strong>Référence de la Commande</strong> : {{ orderCode }} <br />
+<br/>
+<div class="well col-md-6" id="total1">
+<strong>Le montant total de votre commande est de</strong> : {{total}}€
+
+    <a href="{{ path('app_louvre_paiement') }}"><input type="button" id="bouton" class="btn btn-primary" value="Valider" /></a>
+</div>
+
+</div>
+ <br />
+ <div class="well col-md-8" id="blockResume">
+{% for tickets in nom %}
+
+	
+	 <div class="well col-md-10" id="ticketsResume">
+ 
+<strong>Nom</strong> : {{ tickets.name }} <br /> 
+<strong>Prénom</strong> : {{ tickets.firstName }} <br />
+<strong>Date de naissance</strong> : {{tickets.birthDate|date("d/m/Y")}} <br />
+<strong>Pays</strong> : {{tickets.pays}} <br />
+<strong>Tarif réduit</strong> : 
+{% if tickets.lowRate == true %} 
+Oui
+{% elseif tickets.lowRate == false %}
+Non
+{% endif %}
+<br />
+<strong>Type de tarif</strong> : 
+{% if tickets.ticketsRate == 1 %} 
+Enfant
+{% elseif tickets.ticketsRate == 2 %}
+Normal
+{% elseif tickets.ticketsRate == 3 %}
+Senior
+{% elseif tickets.ticketsRate == 4 %}
+Tarif réduit
+{% endif %}
+<br />
+<strong>Prix du billet</strong> : {{tickets.prix}}€
+<hr>
+</div>
+{% endfor %}
+
+<div class="well col-md-4">
+<strong>TOTAL</strong> : {{total}}€
+<div class="form-group text-right">
+    <a href="{{ path('app_louvre_paiement') }}"><input type="button" id="bouton" class="btn btn-primary" value="Valider" /></a>
+</div>
+</div>
+	
+</div>
+
+{% endblock %}

@@ -1,15 +1,21 @@
 services:
     app_louvre.orderCode:
-        class: App\LouvreBundle\OrderCode\OrderCode 
+        class: App\LouvreBundle\Services\OrderCode
 
-    app_louvre.tarif:
-        class: App\LouvreBundle\Calcul\TicketsRate
+    app_louvre.rate:
+        class: App\LouvreBundle\Services\TicketsRate
 
     app_louvre.limit:
-        class: App\LouvreBundle\ValidTickets\ValidLimit
+        class: App\LouvreBundle\Services\ValidLimit
 
     app_louvre.time:
-        class: App\LouvreBundle\ValidTickets\ValidTime
+        class: App\LouvreBundle\Services\ValidTime
         
     app_louvre.email:
-        class: App\LouvreBundle\Email\ApplicationMailer
+        class: App\LouvreBundle\Services\ApplicationMailer
+        
+
+
+
+
+ 

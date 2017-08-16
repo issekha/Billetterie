@@ -1,1 +1,117 @@
-Hello world
+{% extends "AppLouvreBundle::layout.html.twig" %}
+
+{% block content %}
+
+  
+  <h1><strong>Etape 2:</strong> Vos billets </h1>
+  {% for flashMessage in app.session.flashbag.get('errors') %}
+      <div class="alert alert-danger" style="width:52%">
+          {{ flashMessage }}
+      </div>
+  {% endfor %}
+  <hr>
+<div class="well col-md-6" id="ticketsForm">
+ {% set i= 0 %}
+  {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+  {% for ticket in form.tickets %}
+  
+	{% set i = i + 1 %}
+ <div class="well">
+ 	<label>Billet n°{{ i }} </label>
+ 	 {# Génération manuelle et éclatée : #}
+  <div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(ticket.name, "Nom", {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+
+    {# Affichage des erreurs pour ce champ précis. #}
+    {{ form_errors(ticket.name) }}
+
+    <div class="col-md-6">
+      {# Génération de l'input. #}
+      {{ form_widget(ticket.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+  </div>
+
+   <div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(ticket.firstName, "Prénom", {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+
+    {# Affichage des erreurs pour ce champ précis. #}
+    {{ form_errors(ticket.firstName) }}
+
+    <div class="col-md-6">
+      {# Génération de l'input. #}
+      {{ form_widget(ticket.firstName, {'attr': {'class': 'form-control'}}) }}
+    </div>
+  </div>
+
+<div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(ticket.pays, "Nationalité", {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+
+    {# Affichage des erreurs pour ce champ précis. #}
+    {{ form_errors(ticket.pays) }}
+
+    <div class="col-md-6">
+      {# Génération de l'input. #}
+      {{ form_widget(ticket.pays, {'attr': {'class': 'form-control'}}) }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(ticket.birthDate, "Date de naissance", {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+
+    {# Affichage des erreurs pour ce champ précis. #}
+    {{ form_errors(ticket.birthDate) }}
+
+    <div class="col-md-6  ">
+      {# Génération de l'input. #}
+      {{ form_widget(ticket.birthDate, {'attr': {'class': ''}}) }}
+    </div>
+  </div>
+
+ 
+
+  <div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(ticket.lowRate, "Tarif réduit ", {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+
+    {# Affichage des erreurs pour ce champ précis. #}
+    {{ form_errors(ticket.lowRate) }}
+
+    <div class="col-md-6">
+      {# Génération de l'input. #}
+      {{ form_widget(ticket.lowRate, {'attr': {'class': 'checkbox'}}) }}
+    </div>
+  </div>
+   </div>
+  {% endfor %}
+ 	
+ 
+ 
+  <div class="form-group text-right">
+    <input formnovalidate type="submit" id="bouton" class="btn btn-primary" value="Valider" />
+	</div>
+  
+  {{ form_end(form) }}
+</div>
+
+	<div class="row col-md-4" id="infosTarifs">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tarifs :</h3>
+    </div>
+    <ul class="list-group">
+     
+        <li class="list-group-item">Enfant -4 ans   : Gratuit</li>
+      <li class="list-group-item">Enfant -12 ans    : 8 euros</li>
+      <li class="list-group-item">Sénior +60 ans : 12 euros</li>
+      <li class="list-group-item">Tarif réduit    : 10 euros</li>
+      <li class="list-group-item">Tarif normal : 16 euros</li>
+	</ul>
+  </div>
+		
+	</div>
+
+{% endblock %}

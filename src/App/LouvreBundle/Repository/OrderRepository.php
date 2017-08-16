@@ -2,22 +2,26 @@
 
 namespace App\LouvreBundle\Repository;
 
-/**
- * OrderRepository
- */
+
 class OrderRepository extends \Doctrine\ORM\EntityRepository
 {
-	public function limitationReservation($date)
+	public function OrderLimit($date)
 	{
 
-		$qb = $this
-			->createQueryBuilder('t')
-			->select('SUM(t.ticketsNbr)')
-			->where('t.visitDate = :date')
-			->setParameter('date', $date)
+
+		$qb = $this->createQueryBuilder('a');
+
+		$qb
+		->select('SUM(a.ticketsNbr)')
+		->where('a.visitDate = :date')
+		   ->setParameter('date', $date)
 		;
 
-		return $qb->getQuery()->getSingleScalarResult();
+		return $qb
+		->getQuery()
+		->getResult()
+		;
+
 
 	}
 }

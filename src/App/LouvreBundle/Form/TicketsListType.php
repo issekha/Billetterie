@@ -1,17 +1,16 @@
 <?php
-// src/LA/TicketingBundle/Form/Type/OrderType.php
 
-namespace LA\TicketingBundle\Form;
+namespace App\LouvreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use App\LouvreBundle\Form\TicketsType;
 
-class TicketsListType extends OrderType
+
+class TicketsListType extends AbstractType
 {
-     /**
+    /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -20,11 +19,10 @@ class TicketsListType extends OrderType
             'entry_type' => TicketType::class,
             'constraints' => new \Symfony\Component\Validator\Constraints\Valid(),
             'attr' => array(
-          'class' => 'tickets')
+          	'class' => 'tickets')
         ));
     }
-
-    
+	
     /**
      * {@inheritdoc}
      */
@@ -42,4 +40,6 @@ class TicketsListType extends OrderType
     {
         return 'app_louvrebundle_order';
     }
+
+
 }
