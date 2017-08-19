@@ -226,4 +226,11 @@ class AppController extends Controller
 	      
 	    ));
     }
+	
+	public function translationAction($name)
+  {
+    return $this->render('AppLouvreBundle:App:translation.html.twig', array(
+      'name' => $name
+    ));
+  }
 }

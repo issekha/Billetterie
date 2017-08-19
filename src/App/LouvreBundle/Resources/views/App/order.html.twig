@@ -65,11 +65,13 @@
 					{# Affichage des erreurs pour ce champ précis. #}
 					{{ form_errors(form.ticketsNbr) }}
 
-					<span class="col-sm-4">
+					<span class="col-sm-3">
 					  {# Génération de l'input. #}
 					  {{ form_widget(form.ticketsNbr, {'attr': {'class': 'form-control'}}) }}
 					</span>
-					<input formnovalidate type="submit" id="stp1bouton" class="btn btn-primary" value="Valider" />
+					
+					<input type="submit" class="btn btn-success" id="stp1bouton" value="Etape suivante >" />
+					<a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a>
 				  </span>
 
 			{{ form_end(form) }}

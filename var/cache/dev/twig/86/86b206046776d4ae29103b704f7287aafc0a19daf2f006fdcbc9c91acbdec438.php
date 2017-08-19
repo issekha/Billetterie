@@ -16,11 +16,11 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b5739c2cb3823a7da85b1576829ebe68d896db455877171a0b052e62c03ffe32 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b5739c2cb3823a7da85b1576829ebe68d896db455877171a0b052e62c03ffe32->enter($__internal_b5739c2cb3823a7da85b1576829ebe68d896db455877171a0b052e62c03ffe32_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle::layout.html.twig"));
+        $__internal_9a8f1fec50f96f4bdfb2bac9ddd9edc49426bd37fef19da80e8e9abeb7646990 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_9a8f1fec50f96f4bdfb2bac9ddd9edc49426bd37fef19da80e8e9abeb7646990->enter($__internal_9a8f1fec50f96f4bdfb2bac9ddd9edc49426bd37fef19da80e8e9abeb7646990_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle::layout.html.twig"));
 
-        $__internal_dd30d49dd04be0fe82d51734db19ff21598a46efe45def8710f4e8542ed54491 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dd30d49dd04be0fe82d51734db19ff21598a46efe45def8710f4e8542ed54491->enter($__internal_dd30d49dd04be0fe82d51734db19ff21598a46efe45def8710f4e8542ed54491_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle::layout.html.twig"));
+        $__internal_6d4608b30dffaf888bc7d9f61671f616e531e0af1f475a9554729d1f57b6137c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6d4608b30dffaf888bc7d9f61671f616e531e0af1f475a9554729d1f57b6137c->enter($__internal_6d4608b30dffaf888bc7d9f61671f616e531e0af1f475a9554729d1f57b6137c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle::layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -41,7 +41,7 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
         // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-  \t<title>Musée du Louvre</title>
+  \t<title>Louvre.fr</title>
   </head>
   <body>
 \t\t<div class=\"container\">
@@ -49,7 +49,7 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 \t\t\t<nav class=\"navbar navbar-default navbar-fixed-top navbar-inverse navbar-toggleable-md navbar-dark bg-primary fixed-top\">
 \t\t\t\t<div class=\"container-fluid\">
 \t\t\t\t\t<div class=\"navbar-header\">
-\t\t\t\t\t\t<a class=\"navbar-brand\" href=\"../\">Louvre.fr</a>
+\t\t\t\t\t\t<a class=\"navbar-brand\" href=\"http://www.louvre.fr\">Musée du Louvre</a>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbar-main\">
 \t\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">
@@ -57,10 +57,16 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 \t\t\t\t\t\t\t\t<a href=\"#page-top\"></a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"../\">Accueil</a>
+\t\t\t\t\t\t\t\t<a href=\"";
+        // line 26
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("app_louvre_homePage");
+        echo "\">Accueil</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"../step/1\">Commander</a>
+\t\t\t\t\t\t\t\t<a href=\"";
+        // line 29
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("app_louvre_order");
+        echo "\">Commander</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t</ul>
@@ -126,27 +132,27 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 </html>
 ";
         
-        $__internal_b5739c2cb3823a7da85b1576829ebe68d896db455877171a0b052e62c03ffe32->leave($__internal_b5739c2cb3823a7da85b1576829ebe68d896db455877171a0b052e62c03ffe32_prof);
+        $__internal_9a8f1fec50f96f4bdfb2bac9ddd9edc49426bd37fef19da80e8e9abeb7646990->leave($__internal_9a8f1fec50f96f4bdfb2bac9ddd9edc49426bd37fef19da80e8e9abeb7646990_prof);
 
         
-        $__internal_dd30d49dd04be0fe82d51734db19ff21598a46efe45def8710f4e8542ed54491->leave($__internal_dd30d49dd04be0fe82d51734db19ff21598a46efe45def8710f4e8542ed54491_prof);
+        $__internal_6d4608b30dffaf888bc7d9f61671f616e531e0af1f475a9554729d1f57b6137c->leave($__internal_6d4608b30dffaf888bc7d9f61671f616e531e0af1f475a9554729d1f57b6137c_prof);
 
     }
 
     // line 42
     public function block_content($context, array $blocks = array())
     {
-        $__internal_7b8f7ce87b4e0da29148c3c9885db481807367b27d3a79602cf796e1b892ccfc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7b8f7ce87b4e0da29148c3c9885db481807367b27d3a79602cf796e1b892ccfc->enter($__internal_7b8f7ce87b4e0da29148c3c9885db481807367b27d3a79602cf796e1b892ccfc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_894ddba562683e72ae462552207ed6b97331f3137bdc60739720f2a15516bc61 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_894ddba562683e72ae462552207ed6b97331f3137bdc60739720f2a15516bc61->enter($__internal_894ddba562683e72ae462552207ed6b97331f3137bdc60739720f2a15516bc61_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_11687328fd25708ee4cc26491564381a0fe5286d4aaed103a66f4164214bed17 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_11687328fd25708ee4cc26491564381a0fe5286d4aaed103a66f4164214bed17->enter($__internal_11687328fd25708ee4cc26491564381a0fe5286d4aaed103a66f4164214bed17_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
-
-        
-        $__internal_11687328fd25708ee4cc26491564381a0fe5286d4aaed103a66f4164214bed17->leave($__internal_11687328fd25708ee4cc26491564381a0fe5286d4aaed103a66f4164214bed17_prof);
+        $__internal_d074c5d91eeba66848c5b6c9dab499d5916b8a04079850b4a4e0798159e00ebe = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d074c5d91eeba66848c5b6c9dab499d5916b8a04079850b4a4e0798159e00ebe->enter($__internal_d074c5d91eeba66848c5b6c9dab499d5916b8a04079850b4a4e0798159e00ebe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         
-        $__internal_7b8f7ce87b4e0da29148c3c9885db481807367b27d3a79602cf796e1b892ccfc->leave($__internal_7b8f7ce87b4e0da29148c3c9885db481807367b27d3a79602cf796e1b892ccfc_prof);
+        $__internal_d074c5d91eeba66848c5b6c9dab499d5916b8a04079850b4a4e0798159e00ebe->leave($__internal_d074c5d91eeba66848c5b6c9dab499d5916b8a04079850b4a4e0798159e00ebe_prof);
+
+        
+        $__internal_894ddba562683e72ae462552207ed6b97331f3137bdc60739720f2a15516bc61->leave($__internal_894ddba562683e72ae462552207ed6b97331f3137bdc60739720f2a15516bc61_prof);
 
     }
 
@@ -162,7 +168,7 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 
     public function getDebugInfo()
     {
-        return array (  137 => 42,  119 => 59,  115 => 58,  110 => 56,  104 => 53,  100 => 52,  96 => 51,  92 => 50,  88 => 49,  78 => 42,  42 => 9,  38 => 8,  34 => 7,  26 => 1,);
+        return array (  143 => 42,  125 => 59,  121 => 58,  116 => 56,  110 => 53,  106 => 52,  102 => 51,  98 => 50,  94 => 49,  84 => 42,  68 => 29,  62 => 26,  42 => 9,  38 => 8,  34 => 7,  26 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -184,7 +190,7 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 \t\t<link href=\"{{ asset('lib/bootstrap/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
 \t\t<link href=\"{{ asset('lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css') }}\" rel=\"stylesheet\">
 \t\t<link href=\"{{ asset('css/style.css') }}\" rel=\"stylesheet\">
-  \t<title>Musée du Louvre</title>
+  \t<title>Louvre.fr</title>
   </head>
   <body>
 \t\t<div class=\"container\">
@@ -192,7 +198,7 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 \t\t\t<nav class=\"navbar navbar-default navbar-fixed-top navbar-inverse navbar-toggleable-md navbar-dark bg-primary fixed-top\">
 \t\t\t\t<div class=\"container-fluid\">
 \t\t\t\t\t<div class=\"navbar-header\">
-\t\t\t\t\t\t<a class=\"navbar-brand\" href=\"../\">Louvre.fr</a>
+\t\t\t\t\t\t<a class=\"navbar-brand\" href=\"http://www.louvre.fr\">Musée du Louvre</a>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbar-main\">
 \t\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">
@@ -200,10 +206,10 @@ class __TwigTemplate_b990b62505c5a5f5a6cb422969b018bbca8a49127313fd038243a4d82d6
 \t\t\t\t\t\t\t\t<a href=\"#page-top\"></a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"../\">Accueil</a>
+\t\t\t\t\t\t\t\t<a href=\"{{path('app_louvre_homePage')}}\">Accueil</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"../step/1\">Commander</a>
+\t\t\t\t\t\t\t\t<a href=\"{{path('app_louvre_order')}}\">Commander</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t</ul>

@@ -197,7 +197,7 @@ return $this->started;
 }
 public function setOptions(array $options)
 {
-$validOptions = array_flip(array('cache_limiter','cookie_domain','cookie_httponly','cookie_lifetime','cookie_path','cookie_secure','entropy_file','entropy_length','gc_divisor','gc_maxlifetime','gc_probability','hash_bits_per_character','hash_function','name','referer_check','serialize_handler','use_strict_mode','use_cookies','use_only_cookies','use_trans_sid','upload_progress.enabled','upload_progress.cleanup','upload_progress.prefix','upload_progress.name','upload_progress.freq','upload_progress.min-freq','url_rewriter.tags',
+$validOptions = array_flip(array('cache_limiter','cookie_domain','cookie_httponly','cookie_lifetime','cookie_path','cookie_secure','entropy_file','entropy_length','gc_divisor','gc_maxlifetime','gc_probability','hash_bits_per_character','hash_function','name','referer_check','serialize_handler','use_strict_mode','use_cookies','use_only_cookies','use_trans_sid','upload_progress.enabled','upload_progress.cleanup','upload_progress.prefix','upload_progress.name','upload_progress.freq','upload_progress.min-freq','url_rewriter.tags','sid_length','sid_bits_per_character','trans_sid_hosts','trans_sid_tags',
 ));
 foreach ($options as $key => $value) {
 if (isset($validOptions[$key])) {
@@ -815,6 +815,7 @@ use Psr\Cache\CacheItemInterface;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\Cache\Exception\InvalidArgumentException;
 abstract class AbstractAdapter implements AdapterInterface, LoggerAwareInterface
@@ -888,7 +889,9 @@ if (!self::$apcuSupported) {
 return $fs;
 }
 $apcu = new ApcuAdapter($namespace, (int) $defaultLifetime / 5, $version);
-if (null !== $logger) {
+if ('cli'=== PHP_SAPI && !ini_get('apc.enable_cli')) {
+$apcu->setLogger(new NullLogger());
+} elseif (null !== $logger) {
 $apcu->setLogger($logger);
 }
 return new ChainAdapter(array($apcu, $fs));
@@ -1090,6 +1093,9 @@ private function generateItems($items, &$keys)
 $f = $this->createCacheItem;
 try {
 foreach ($items as $id => $value) {
+if (!isset($keys[$id])) {
+$id = key($keys);
+}
 $key = $keys[$id];
 unset($keys[$id]);
 yield $key => $f($key, $value, true);
@@ -1115,7 +1121,7 @@ class ApcuAdapter extends AbstractAdapter
 {
 public static function isSupported()
 {
-return function_exists('apcu_fetch') && ini_get('apc.enabled') && !('cli'=== PHP_SAPI && !ini_get('apc.enable_cli'));
+return function_exists('apcu_fetch') && ini_get('apc.enabled');
 }
 public function __construct($namespace ='', $defaultLifetime = 0, $version = null)
 {
@@ -1137,7 +1143,7 @@ apcu_add($version.'@'.$namespace, null);
 protected function doFetch(array $ids)
 {
 try {
-return apcu_fetch($ids);
+return apcu_fetch($ids) ?: array();
 } catch (\Error $e) {
 throw new \ErrorException($e->getMessage(), $e->getCode(), E_ERROR, $e->getFile(), $e->getLine());
 }
@@ -1148,7 +1154,7 @@ return apcu_exists($id);
 }
 protected function doClear($namespace)
 {
-return isset($namespace[0]) && class_exists('APCuIterator', false)
+return isset($namespace[0]) && class_exists('APCuIterator', false) && ('cli'!== PHP_SAPI || ini_get('apc.enable_cli'))
 ? apcu_delete(new \APCuIterator(sprintf('/^%s/', preg_quote($namespace,'/')), APC_ITER_KEY))
 : apcu_clear_cache();
 }
@@ -1162,7 +1168,10 @@ return true;
 protected function doSave(array $values, $lifetime)
 {
 try {
-return array_keys(apcu_store($values, null, $lifetime));
+if (false === $failures = apcu_store($values, null, $lifetime)) {
+$failures = $values;
+}
+return array_keys($failures);
 } catch (\Error $e) {
 } catch (\Exception $e) {
 }
@@ -2085,7 +2094,7 @@ return $this->mergeDefaults($attributes, $route->getDefaults());
 }
 protected function handleRouteRequirements($pathinfo, $name, Route $route)
 {
-if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context'=> $this->context,'request'=> $this->request))) {
+if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context'=> $this->context,'request'=> $this->request ?: $this->createRequest($pathinfo)))) {
 return array(self::REQUIREMENT_MISMATCH, null);
 }
 $scheme = $this->context->getScheme();
@@ -2110,6 +2119,14 @@ throw new \RuntimeException('Unable to use expressions as the Symfony Expression
 $this->expressionLanguage = new ExpressionLanguage(null, $this->expressionLanguageProviders);
 }
 return $this->expressionLanguage;
+}
+protected function createRequest($pathinfo)
+{
+if (!class_exists('Symfony\Component\HttpFoundation\Request')) {
+return null;
+}
+return Request::create($this->context->getScheme().'://'.$this->context->getHost().$this->context->getBaseUrl().$pathinfo, $this->context->getMethod(), $this->context->getParameters(), array(), array(), array('SCRIPT_FILENAME'=> $this->context->getBaseUrl(),'SCRIPT_NAME'=> $this->context->getBaseUrl(),
+));
 }
 }
 }
@@ -2138,7 +2155,7 @@ return $parameters;
 }
 protected function handleRouteRequirements($pathinfo, $name, Route $route)
 {
-if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context'=> $this->context,'request'=> $this->request))) {
+if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context'=> $this->context,'request'=> $this->request ?: $this->createRequest($pathinfo)))) {
 return array(self::REQUIREMENT_MISMATCH, null);
 }
 $scheme = $this->context->getScheme();
@@ -2292,7 +2309,7 @@ CacheItem::class
 }
 public static function create($file, CacheItemPoolInterface $fallbackPool)
 {
-if ((PHP_VERSION_ID >= 70000 && ini_get('opcache.enable')) || defined('HHVM_VERSION')) {
+if ((\PHP_VERSION_ID >= 70000 && ini_get('opcache.enable')) || defined('HHVM_VERSION')) {
 if (!$fallbackPool instanceof AdapterInterface) {
 $fallbackPool = new ProxyAdapter($fallbackPool);
 }
@@ -3406,9 +3423,9 @@ class Container implements ResettableContainerInterface
 protected $parameterBag;
 protected $services = array();
 protected $methodMap = array();
-protected $privates = array();
 protected $aliases = array();
 protected $loading = array();
+protected $privates = array();
 private $underscoreMap = array('_'=>'','.'=>'_','\\'=>'_');
 private $envCache = array();
 public function __construct(ParameterBagInterface $parameterBag = null)
@@ -3494,14 +3511,14 @@ for ($i = 2;;) {
 if (isset($this->privates[$id])) {
 @trigger_error(sprintf('Requesting the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
 }
-if ('service_container'=== $id) {
-return $this;
-}
 if (isset($this->aliases[$id])) {
 $id = $this->aliases[$id];
 }
 if (isset($this->services[$id])) {
 return $this->services[$id];
+}
+if ('service_container'=== $id) {
+return $this;
 }
 if (isset($this->loading[$id])) {
 throw new ServiceCircularReferenceException($id, array_keys($this->loading));
@@ -3544,11 +3561,11 @@ return $service;
 public function initialized($id)
 {
 $id = strtolower($id);
-if ('service_container'=== $id) {
-return false;
-}
 if (isset($this->aliases[$id])) {
 $id = $this->aliases[$id];
+}
+if ('service_container'=== $id) {
+return false;
 }
 return isset($this->services[$id]);
 }
@@ -3777,7 +3794,7 @@ parent::removeListener($eventName, $listener);
 public function hasListeners($eventName = null)
 {
 if (null === $eventName) {
-return (bool) count($this->listenerIds) || (bool) count($this->listeners);
+return $this->listenerIds || $this->listeners || parent::hasListeners();
 }
 if (isset($this->listenerIds[$eventName])) {
 return true;
@@ -5040,8 +5057,8 @@ if (null !== $result) {
 break;
 }
 } catch (AccountStatusException $e) {
-$e->setToken($token);
-throw $e;
+$lastException = $e;
+break;
 } catch (AuthenticationException $e) {
 $lastException = $e;
 }
@@ -5341,6 +5358,7 @@ public function getListeners(Request $request);
 }
 namespace Symfony\Bundle\SecurityBundle\Security
 {
+use Symfony\Bundle\SecurityBundle\Security\FirewallContext;
 use Symfony\Component\Security\Http\FirewallMapInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -5348,12 +5366,10 @@ class FirewallMap implements FirewallMapInterface
 {
 protected $container;
 protected $map;
-private $contexts;
 public function __construct(ContainerInterface $container, array $map)
 {
 $this->container = $container;
 $this->map = $map;
-$this->contexts = new \SplObjectStorage();
 }
 public function getListeners(Request $request)
 {
@@ -5373,12 +5389,19 @@ return $context->getConfig();
 }
 private function getFirewallContext(Request $request)
 {
-if ($this->contexts->contains($request)) {
-return $this->contexts[$request];
+if ($request->attributes->has('_firewall_context')) {
+$storedContextId = $request->attributes->get('_firewall_context');
+foreach ($this->map as $contextId => $requestMatcher) {
+if ($contextId === $storedContextId) {
+return $this->container->get($contextId);
+}
+}
+$request->attributes->remove('_firewall_context');
 }
 foreach ($this->map as $contextId => $requestMatcher) {
 if (null === $requestMatcher || $requestMatcher->matches($request)) {
-return $this->contexts[$request] = $this->container->get($contextId);
+$request->attributes->set('_firewall_context', $contextId);
+return $this->container->get($contextId);
 }
 }
 }
@@ -5494,11 +5517,11 @@ namespace
 {
 class Twig_Environment
 {
-const VERSION ='1.34.3';
-const VERSION_ID = 13403;
+const VERSION ='1.34.4';
+const VERSION_ID = 13404;
 const MAJOR_VERSION = 1;
 const MINOR_VERSION = 34;
-const RELEASE_VERSION = 3;
+const RELEASE_VERSION = 4;
 const EXTRA_VERSION ='';
 protected $charset;
 protected $loader;

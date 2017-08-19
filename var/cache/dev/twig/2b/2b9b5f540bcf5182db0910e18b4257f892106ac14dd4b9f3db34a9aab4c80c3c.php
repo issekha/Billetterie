@@ -21,29 +21,29 @@ class __TwigTemplate_336afdeb8d8fbc57a9f9e033905d93c47c45000a823c846d9f367b3333d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1454857b0e681ba11d282cf37d1277c9237e8615e09cb6f01ee370d927f9b7bd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1454857b0e681ba11d282cf37d1277c9237e8615e09cb6f01ee370d927f9b7bd->enter($__internal_1454857b0e681ba11d282cf37d1277c9237e8615e09cb6f01ee370d927f9b7bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
+        $__internal_0e0445d8a4ed5ee26b38ce1652cf96c278dc8dbf50beaa1d1b137a333557c8bd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0e0445d8a4ed5ee26b38ce1652cf96c278dc8dbf50beaa1d1b137a333557c8bd->enter($__internal_0e0445d8a4ed5ee26b38ce1652cf96c278dc8dbf50beaa1d1b137a333557c8bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
 
-        $__internal_c75df118ce657f02ed6f7b464a78df9e73b3da5182d472dcf849797ef0096f1c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c75df118ce657f02ed6f7b464a78df9e73b3da5182d472dcf849797ef0096f1c->enter($__internal_c75df118ce657f02ed6f7b464a78df9e73b3da5182d472dcf849797ef0096f1c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
+        $__internal_d0c616f889d11173e42413e323657e989b4a524bdb898c76b72513ea98cbb7e8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d0c616f889d11173e42413e323657e989b4a524bdb898c76b72513ea98cbb7e8->enter($__internal_d0c616f889d11173e42413e323657e989b4a524bdb898c76b72513ea98cbb7e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1454857b0e681ba11d282cf37d1277c9237e8615e09cb6f01ee370d927f9b7bd->leave($__internal_1454857b0e681ba11d282cf37d1277c9237e8615e09cb6f01ee370d927f9b7bd_prof);
+        $__internal_0e0445d8a4ed5ee26b38ce1652cf96c278dc8dbf50beaa1d1b137a333557c8bd->leave($__internal_0e0445d8a4ed5ee26b38ce1652cf96c278dc8dbf50beaa1d1b137a333557c8bd_prof);
 
         
-        $__internal_c75df118ce657f02ed6f7b464a78df9e73b3da5182d472dcf849797ef0096f1c->leave($__internal_c75df118ce657f02ed6f7b464a78df9e73b3da5182d472dcf849797ef0096f1c_prof);
+        $__internal_d0c616f889d11173e42413e323657e989b4a524bdb898c76b72513ea98cbb7e8->leave($__internal_d0c616f889d11173e42413e323657e989b4a524bdb898c76b72513ea98cbb7e8_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_efeb18c7f0231a30e8821fe0e83f4b14629cf9f3bfb618639c1c970cb2ce222c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_efeb18c7f0231a30e8821fe0e83f4b14629cf9f3bfb618639c1c970cb2ce222c->enter($__internal_efeb18c7f0231a30e8821fe0e83f4b14629cf9f3bfb618639c1c970cb2ce222c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_2f2d704f6616bcec0039fbfe7eaf0b773533285c45c6e873508e586fde8fa9f6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2f2d704f6616bcec0039fbfe7eaf0b773533285c45c6e873508e586fde8fa9f6->enter($__internal_2f2d704f6616bcec0039fbfe7eaf0b773533285c45c6e873508e586fde8fa9f6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_2fe96bf95b9de01c9cfb61683959dc69446477fdfb907f41dd12245e86b109e6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2fe96bf95b9de01c9cfb61683959dc69446477fdfb907f41dd12245e86b109e6->enter($__internal_2fe96bf95b9de01c9cfb61683959dc69446477fdfb907f41dd12245e86b109e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_e4307d57c598fd28e90d1844275e6a692d76937ced114e6313111f589629375b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e4307d57c598fd28e90d1844275e6a692d76937ced114e6313111f589629375b->enter($__internal_e4307d57c598fd28e90d1844275e6a692d76937ced114e6313111f589629375b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "
@@ -96,83 +96,91 @@ Journée
         echo twig_escape_filter($this->env, (isset($context["total"]) ? $context["total"] : $this->getContext($context, "total")), "html", null, true);
         echo "€
 
-    <a href=\"";
-        // line 31
+<div>
+\t<div style=\"text-align:right\">
+\t\t<a href=\"../\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a>
+\t\t<a href=\"javascript:history.go(-1)\"><input type=\"button\" class=\"btn btn-primary\" value=\"< Etape précédente\" /></a>
+\t\t
+\t\t<a href=\"";
+        // line 36
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("app_louvre_paiement");
-        echo "\"><input type=\"button\" id=\"bouton\" class=\"btn btn-primary\" value=\"Valider\" /></a>
+        echo "\"><input type=\"submit\" id=\"up\" class=\"btn btn-success\" name=\"up\" value=\"Etape suivante >\" /></a>
+\t</div>
+</div>
+   
 </div>
 
 </div>
  <br />
  <div class=\"well col-md-8\" id=\"blockResume\">
 ";
-        // line 37
+        // line 45
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["nom"]) ? $context["nom"] : $this->getContext($context, "nom")));
         foreach ($context['_seq'] as $context["_key"] => $context["tickets"]) {
-            // line 38
+            // line 46
             echo "
 \t
 \t <div class=\"well col-md-10\" id=\"ticketsResume\">
  
 <strong>Nom</strong> : ";
-            // line 42
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "name", array()), "html", null, true);
             echo " <br /> 
 <strong>Prénom</strong> : ";
-            // line 43
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "firstName", array()), "html", null, true);
             echo " <br />
-<strong>Date de naissance</strong> : ";
-            // line 44
+<strong>Date de naissance</strong> :<br/> ";
+            // line 52
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["tickets"], "birthDate", array()), "d/m/Y"), "html", null, true);
             echo " <br />
 <strong>Pays</strong> : ";
-            // line 45
+            // line 53
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "pays", array()), "html", null, true);
             echo " <br />
 <strong>Tarif réduit</strong> : 
 ";
-            // line 47
+            // line 55
             if (($this->getAttribute($context["tickets"], "lowRate", array()) == true)) {
                 echo " 
 Oui
 ";
-            } elseif (($this->getAttribute(            // line 49
+            } elseif (($this->getAttribute(            // line 57
 $context["tickets"], "lowRate", array()) == false)) {
-                // line 50
+                // line 58
                 echo "Non
 ";
             }
-            // line 52
+            // line 60
             echo "<br />
 <strong>Type de tarif</strong> : 
 ";
-            // line 54
+            // line 62
             if (($this->getAttribute($context["tickets"], "ticketsRate", array()) == 1)) {
                 echo " 
 Enfant
 ";
-            } elseif (($this->getAttribute(            // line 56
+            } elseif (($this->getAttribute(            // line 64
 $context["tickets"], "ticketsRate", array()) == 2)) {
-                // line 57
+                // line 65
                 echo "Normal
 ";
-            } elseif (($this->getAttribute(            // line 58
+            } elseif (($this->getAttribute(            // line 66
 $context["tickets"], "ticketsRate", array()) == 3)) {
-                // line 59
+                // line 67
                 echo "Senior
 ";
-            } elseif (($this->getAttribute(            // line 60
+            } elseif (($this->getAttribute(            // line 68
 $context["tickets"], "ticketsRate", array()) == 4)) {
-                // line 61
+                // line 69
                 echo "Tarif réduit
 ";
             }
-            // line 63
+            // line 71
             echo "<br />
 <strong>Prix du billet</strong> : ";
-            // line 64
+            // line 72
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "prix", array()), "html", null, true);
             echo "€
 <hr>
@@ -182,18 +190,18 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tickets'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 68
+        // line 76
         echo "
 <div class=\"well col-md-4\">
 <strong>TOTAL</strong> : ";
-        // line 70
+        // line 78
         echo twig_escape_filter($this->env, (isset($context["total"]) ? $context["total"] : $this->getContext($context, "total")), "html", null, true);
         echo "€
 <div class=\"form-group text-right\">
     <a href=\"";
-        // line 72
+        // line 80
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("app_louvre_paiement");
-        echo "\"><input type=\"button\" id=\"bouton\" class=\"btn btn-primary\" value=\"Valider\" /></a>
+        echo "\"><input name=\"\" type=\"submit\" id=\"bouton\" class=\"btn btn-success\" value=\"Valider\" /></a>
 </div>
 </div>
 \t
@@ -201,10 +209,10 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
 
 ";
         
-        $__internal_2fe96bf95b9de01c9cfb61683959dc69446477fdfb907f41dd12245e86b109e6->leave($__internal_2fe96bf95b9de01c9cfb61683959dc69446477fdfb907f41dd12245e86b109e6_prof);
+        $__internal_e4307d57c598fd28e90d1844275e6a692d76937ced114e6313111f589629375b->leave($__internal_e4307d57c598fd28e90d1844275e6a692d76937ced114e6313111f589629375b_prof);
 
         
-        $__internal_efeb18c7f0231a30e8821fe0e83f4b14629cf9f3bfb618639c1c970cb2ce222c->leave($__internal_efeb18c7f0231a30e8821fe0e83f4b14629cf9f3bfb618639c1c970cb2ce222c_prof);
+        $__internal_2f2d704f6616bcec0039fbfe7eaf0b773533285c45c6e873508e586fde8fa9f6->leave($__internal_2f2d704f6616bcec0039fbfe7eaf0b773533285c45c6e873508e586fde8fa9f6_prof);
 
     }
 
@@ -220,7 +228,7 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
 
     public function getDebugInfo()
     {
-        return array (  195 => 72,  190 => 70,  186 => 68,  176 => 64,  173 => 63,  169 => 61,  167 => 60,  164 => 59,  162 => 58,  159 => 57,  157 => 56,  152 => 54,  148 => 52,  144 => 50,  142 => 49,  137 => 47,  132 => 45,  128 => 44,  124 => 43,  120 => 42,  114 => 38,  110 => 37,  101 => 31,  96 => 29,  90 => 26,  85 => 24,  81 => 22,  77 => 20,  75 => 19,  69 => 16,  62 => 12,  57 => 10,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  203 => 80,  198 => 78,  194 => 76,  184 => 72,  181 => 71,  177 => 69,  175 => 68,  172 => 67,  170 => 66,  167 => 65,  165 => 64,  160 => 62,  156 => 60,  152 => 58,  150 => 57,  145 => 55,  140 => 53,  136 => 52,  132 => 51,  128 => 50,  122 => 46,  118 => 45,  106 => 36,  96 => 29,  90 => 26,  85 => 24,  81 => 22,  77 => 20,  75 => 19,  69 => 16,  62 => 12,  57 => 10,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -263,7 +271,15 @@ Demi-Journée
 <div class=\"well col-md-6\" id=\"total1\">
 <strong>Le montant total de votre commande est de</strong> : {{total}}€
 
-    <a href=\"{{ path('app_louvre_paiement') }}\"><input type=\"button\" id=\"bouton\" class=\"btn btn-primary\" value=\"Valider\" /></a>
+<div>
+\t<div style=\"text-align:right\">
+\t\t<a href=\"../\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a>
+\t\t<a href=\"javascript:history.go(-1)\"><input type=\"button\" class=\"btn btn-primary\" value=\"< Etape précédente\" /></a>
+\t\t
+\t\t<a href=\"{{ path('app_louvre_paiement') }}\"><input type=\"submit\" id=\"up\" class=\"btn btn-success\" name=\"up\" value=\"Etape suivante >\" /></a>
+\t</div>
+</div>
+   
 </div>
 
 </div>
@@ -276,7 +292,7 @@ Demi-Journée
  
 <strong>Nom</strong> : {{ tickets.name }} <br /> 
 <strong>Prénom</strong> : {{ tickets.firstName }} <br />
-<strong>Date de naissance</strong> : {{tickets.birthDate|date(\"d/m/Y\")}} <br />
+<strong>Date de naissance</strong> :<br/> {{tickets.birthDate|date(\"d/m/Y\")}} <br />
 <strong>Pays</strong> : {{tickets.pays}} <br />
 <strong>Tarif réduit</strong> : 
 {% if tickets.lowRate == true %} 
@@ -304,7 +320,7 @@ Tarif réduit
 <div class=\"well col-md-4\">
 <strong>TOTAL</strong> : {{total}}€
 <div class=\"form-group text-right\">
-    <a href=\"{{ path('app_louvre_paiement') }}\"><input type=\"button\" id=\"bouton\" class=\"btn btn-primary\" value=\"Valider\" /></a>
+    <a href=\"{{ path('app_louvre_paiement') }}\"><input name=\"\" type=\"submit\" id=\"bouton\" class=\"btn btn-success\" value=\"Valider\" /></a>
 </div>
 </div>
 \t

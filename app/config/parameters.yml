@@ -6,7 +6,8 @@ parameters:
     database_user: app_user
     database_password: secret
     mailer_transport: gmail
-    mailer_host: smtp.gmail.com
-    mailer_user: lfarant01@gmail.com
-    mailer_password: ADE_et_IAN01
+    mailer_host: 127.0.0.1
+    mailer_user: dsetdb@gmail.com
+    mailer_password: ADEyemi01
     secret: ThisTokenIsNotSoSecretChangeIt
+    locale: fr

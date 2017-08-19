@@ -27,28 +27,41 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
         $context = $this->context;
         $request = $this->request;
 
-        // mk_louvre_reservation
+        // app_louvre_homePage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'mk_louvre_reservation');
+                return $this->redirect($pathinfo.'/', 'app_louvre_homePage');
             }
 
-            return array (  '_controller' => 'MK\\LouvreBundle\\Controller\\DefaultController::reservationAction',  '_route' => 'mk_louvre_reservation',);
+            return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::indexAction',  '_route' => 'app_louvre_homePage',);
         }
 
-        // mk_louvre_ticket
-        if ($pathinfo === '/ticket') {
-            return array (  '_controller' => 'MK\\LouvreBundle\\Controller\\DefaultController::ticketAction',  '_route' => 'mk_louvre_ticket',);
+        if (0 === strpos($pathinfo, '/step')) {
+            // app_louvre_order
+            if ($pathinfo === '/step/1') {
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::orderAction',  '_route' => 'app_louvre_order',);
+            }
+
+            // app_louvre_ticket
+            if ($pathinfo === '/step/2') {
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::ticketAction',  '_route' => 'app_louvre_ticket',);
+            }
+
+            // app_louvre_resume
+            if ($pathinfo === '/step/3') {
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::resumeAction',  '_route' => 'app_louvre_resume',);
+            }
+
+            // app_louvre_paiement
+            if ($pathinfo === '/step/4') {
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::paiementAction',  '_route' => 'app_louvre_paiement',);
+            }
+
         }
 
-        // mk_louvre_recapitulatif
-        if ($pathinfo === '/recapitulatif') {
-            return array (  '_controller' => 'MK\\LouvreBundle\\Controller\\DefaultController::recapitulatifAction',  '_route' => 'mk_louvre_recapitulatif',);
-        }
-
-        // mk_louvre_paiement
-        if ($pathinfo === '/paiement') {
-            return array (  '_controller' => 'MK\\LouvreBundle\\Controller\\DefaultController::paiementAction',  '_route' => 'mk_louvre_paiement',);
+        // app_louvre_translation
+        if (0 === strpos($pathinfo, '/traduction') && preg_match('#^/traduction/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_louvre_translation')), array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::translationAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

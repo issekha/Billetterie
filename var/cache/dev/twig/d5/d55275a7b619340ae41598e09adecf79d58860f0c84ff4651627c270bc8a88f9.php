@@ -21,29 +21,29 @@ class __TwigTemplate_e652e4c2965a36023467cbc9921dbc3ee0e73303fa63e5d438790c445d4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_906616123b055028439c4ba71cfa5e4c6c9c0eadc320441af9e47c4d84ef1e46 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_906616123b055028439c4ba71cfa5e4c6c9c0eadc320441af9e47c4d84ef1e46->enter($__internal_906616123b055028439c4ba71cfa5e4c6c9c0eadc320441af9e47c4d84ef1e46_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:index.html.twig"));
+        $__internal_479ddddc0923cf816d40207b99a1531a2f30a958c6c42baa84a877b8ea0faf98 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_479ddddc0923cf816d40207b99a1531a2f30a958c6c42baa84a877b8ea0faf98->enter($__internal_479ddddc0923cf816d40207b99a1531a2f30a958c6c42baa84a877b8ea0faf98_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:index.html.twig"));
 
-        $__internal_cde2942cf47c5513cc7e047a1c084c541ffd39045937f1c14faeadd069732eef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cde2942cf47c5513cc7e047a1c084c541ffd39045937f1c14faeadd069732eef->enter($__internal_cde2942cf47c5513cc7e047a1c084c541ffd39045937f1c14faeadd069732eef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:index.html.twig"));
+        $__internal_d4cf10d907cad881734ee4a01390186ba8bcd9e19478ad9c09ab5b7e5722d9ce = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d4cf10d907cad881734ee4a01390186ba8bcd9e19478ad9c09ab5b7e5722d9ce->enter($__internal_d4cf10d907cad881734ee4a01390186ba8bcd9e19478ad9c09ab5b7e5722d9ce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_906616123b055028439c4ba71cfa5e4c6c9c0eadc320441af9e47c4d84ef1e46->leave($__internal_906616123b055028439c4ba71cfa5e4c6c9c0eadc320441af9e47c4d84ef1e46_prof);
+        $__internal_479ddddc0923cf816d40207b99a1531a2f30a958c6c42baa84a877b8ea0faf98->leave($__internal_479ddddc0923cf816d40207b99a1531a2f30a958c6c42baa84a877b8ea0faf98_prof);
 
         
-        $__internal_cde2942cf47c5513cc7e047a1c084c541ffd39045937f1c14faeadd069732eef->leave($__internal_cde2942cf47c5513cc7e047a1c084c541ffd39045937f1c14faeadd069732eef_prof);
+        $__internal_d4cf10d907cad881734ee4a01390186ba8bcd9e19478ad9c09ab5b7e5722d9ce->leave($__internal_d4cf10d907cad881734ee4a01390186ba8bcd9e19478ad9c09ab5b7e5722d9ce_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_09e20499f582a6f564f520da594cceff353e4fbfc0a9131780d8db24443f5a70 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_09e20499f582a6f564f520da594cceff353e4fbfc0a9131780d8db24443f5a70->enter($__internal_09e20499f582a6f564f520da594cceff353e4fbfc0a9131780d8db24443f5a70_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_f46899c4db963d2022f7fc2b6ae1f768170ca166c454c3503e339a91479d7920 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f46899c4db963d2022f7fc2b6ae1f768170ca166c454c3503e339a91479d7920->enter($__internal_f46899c4db963d2022f7fc2b6ae1f768170ca166c454c3503e339a91479d7920_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_430baae11e28b3c105a0d7d07cac9c9a238ac53346a7e0f027e4fb26bb27eb8f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_430baae11e28b3c105a0d7d07cac9c9a238ac53346a7e0f027e4fb26bb27eb8f->enter($__internal_430baae11e28b3c105a0d7d07cac9c9a238ac53346a7e0f027e4fb26bb27eb8f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_584fdcb24fc056b17d50b3447045f826b15c1de7066f2a2f059c279b9de24ba1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_584fdcb24fc056b17d50b3447045f826b15c1de7066f2a2f059c279b9de24ba1->enter($__internal_584fdcb24fc056b17d50b3447045f826b15c1de7066f2a2f059c279b9de24ba1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "
@@ -52,12 +52,12 @@ class __TwigTemplate_e652e4c2965a36023467cbc9921dbc3ee0e73303fa63e5d438790c445d4
 \t\t\t<div class=\"jumbotron\">
 \t\t\t\t<div class=\"container text-center\">
 \t\t\t\t\t<h1>Espace Billetterie</h1>
-\t\t\t\t\t<p>Commandez vos billets en 4 étapes</p>
+\t\t\t\t\t<p>Evitez les files d'attentes en 4 étapes</p>
 \t\t\t\t\t<p>
 \t\t\t\t\t\t <a href=\"";
         // line 12
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("app_louvre_order");
-        echo "\" class=\"btn btn-primary\">Commander</a>
+        echo "\" class=\"btn btn-primary\">COMMENCER</a>
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -85,10 +85,10 @@ class __TwigTemplate_e652e4c2965a36023467cbc9921dbc3ee0e73303fa63e5d438790c445d4
         echo "
 ";
         
-        $__internal_430baae11e28b3c105a0d7d07cac9c9a238ac53346a7e0f027e4fb26bb27eb8f->leave($__internal_430baae11e28b3c105a0d7d07cac9c9a238ac53346a7e0f027e4fb26bb27eb8f_prof);
+        $__internal_584fdcb24fc056b17d50b3447045f826b15c1de7066f2a2f059c279b9de24ba1->leave($__internal_584fdcb24fc056b17d50b3447045f826b15c1de7066f2a2f059c279b9de24ba1_prof);
 
         
-        $__internal_09e20499f582a6f564f520da594cceff353e4fbfc0a9131780d8db24443f5a70->leave($__internal_09e20499f582a6f564f520da594cceff353e4fbfc0a9131780d8db24443f5a70_prof);
+        $__internal_f46899c4db963d2022f7fc2b6ae1f768170ca166c454c3503e339a91479d7920->leave($__internal_f46899c4db963d2022f7fc2b6ae1f768170ca166c454c3503e339a91479d7920_prof);
 
     }
 
@@ -126,9 +126,9 @@ class __TwigTemplate_e652e4c2965a36023467cbc9921dbc3ee0e73303fa63e5d438790c445d4
 \t\t\t<div class=\"jumbotron\">
 \t\t\t\t<div class=\"container text-center\">
 \t\t\t\t\t<h1>Espace Billetterie</h1>
-\t\t\t\t\t<p>Commandez vos billets en 4 étapes</p>
+\t\t\t\t\t<p>Evitez les files d'attentes en 4 étapes</p>
 \t\t\t\t\t<p>
-\t\t\t\t\t\t <a href=\"{{ path('app_louvre_order') }}\" class=\"btn btn-primary\">Commander</a>
+\t\t\t\t\t\t <a href=\"{{ path('app_louvre_order') }}\" class=\"btn btn-primary\">COMMENCER</a>
 \t\t\t\t\t</p>
 \t\t\t\t</div>
 \t\t\t</div>

@@ -37,7 +37,7 @@ body {
 }
 .jumbotron {
     color: #fff;
-    background-color: rgba(0, 0, 255, 0);
+    background-color: rgba(0, 0, 255, 0.2);
     
     
     /* tiré de la moitié de sa propre hauteur */
@@ -90,6 +90,10 @@ select{
 }
 #ticketsResume{
 	text-align: left;
+	color: lightgray;
+	background-image: url('../images/2ticketLouvreSml.jpg');
+	
+	background-repeat:no-repeat;
 }
 .ticketsList{
 	visibility: hidden;

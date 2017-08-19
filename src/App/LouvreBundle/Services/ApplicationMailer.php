@@ -20,7 +20,7 @@ class ApplicationMailer
       //  Envoie d'email
       $message = \Swift_Message::newInstance();
       $message->setSubject("Votre réservation pour le musée du Louvre");
-      $message->setFrom('confirmation@museedulouvre.com');
+      $message->setFrom('dsetdb@gmail.com');
       $message->setTo($session->get('email'));
       // pour envoyer le message en HTML
       $message->setBody(

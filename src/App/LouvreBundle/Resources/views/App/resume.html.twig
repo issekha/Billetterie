@@ -28,7 +28,15 @@ Demi-Journée
 <div class="well col-md-6" id="total1">
 <strong>Le montant total de votre commande est de</strong> : {{total}}€
 
-    <a href="{{ path('app_louvre_paiement') }}"><input type="button" id="bouton" class="btn btn-primary" value="Valider" /></a>
+<div>
+	<div style="text-align:right">
+		<a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a>
+		<a href="javascript:history.go(-1)"><input type="button" class="btn btn-primary" value="< Etape précédente" /></a>
+		
+		<a href="{{ path('app_louvre_paiement') }}"><input type="submit" id="up" class="btn btn-success" name="up" value="Etape suivante >" /></a>
+	</div>
+</div>
+   
 </div>
 
 </div>
@@ -41,7 +49,7 @@ Demi-Journée
  
 <strong>Nom</strong> : {{ tickets.name }} <br /> 
 <strong>Prénom</strong> : {{ tickets.firstName }} <br />
-<strong>Date de naissance</strong> : {{tickets.birthDate|date("d/m/Y")}} <br />
+<strong>Date de naissance</strong> :<br/> {{tickets.birthDate|date("d/m/Y")}} <br />
 <strong>Pays</strong> : {{tickets.pays}} <br />
 <strong>Tarif réduit</strong> : 
 {% if tickets.lowRate == true %} 
@@ -69,7 +77,7 @@ Tarif réduit
 <div class="well col-md-4">
 <strong>TOTAL</strong> : {{total}}€
 <div class="form-group text-right">
-    <a href="{{ path('app_louvre_paiement') }}"><input type="button" id="bouton" class="btn btn-primary" value="Valider" /></a>
+    <a href="{{ path('app_louvre_paiement') }}"><input name="" type="submit" id="bouton" class="btn btn-success" value="Valider" /></a>
 </div>
 </div>
 	

@@ -87,11 +87,12 @@
   </div>
    </div>
   {% endfor %}
- 	
- 
- 
-  <div class="form-group text-right">
-    <input formnovalidate type="submit" id="bouton" class="btn btn-primary" value="Valider" />
+   <div>
+		<div style="text-align:right">
+			<a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a>
+			<a href="javascript:history.go(-1)"><input type="button" class="btn btn-primary" value="< Etape précédente" /></a>
+			<input type="submit" class="btn btn-success" value="Etape suivante >" />
+		</div>
 	</div>
   
   {{ form_end(form) }}

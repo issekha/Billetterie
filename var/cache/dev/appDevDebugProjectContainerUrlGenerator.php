@@ -40,6 +40,7 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'app_louvre_ticket' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\LouvreBundle\\Controller\\AppController::ticketAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/step/2',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'app_louvre_resume' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\LouvreBundle\\Controller\\AppController::resumeAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/step/3',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'app_louvre_paiement' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\LouvreBundle\\Controller\\AppController::paiementAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/step/4',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'app_louvre_translation' => array (  0 =>   array (    0 => 'name',  ),  1 =>   array (    '_controller' => 'App\\LouvreBundle\\Controller\\AppController::translationAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'name',    ),    1 =>     array (      0 => 'text',      1 => '/traduction',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }

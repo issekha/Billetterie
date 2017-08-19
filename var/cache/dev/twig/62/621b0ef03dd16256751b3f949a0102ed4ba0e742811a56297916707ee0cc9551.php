@@ -21,29 +21,29 @@ class __TwigTemplate_4e5a19784f2917355d2f21ab23e93e6f9ac98fd2cb0eb1b0530ef4252b6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d1f1f6cbe2b41fd6ab4ba0b687928e440149c8659bf5d46be808faa8c1852a9a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d1f1f6cbe2b41fd6ab4ba0b687928e440149c8659bf5d46be808faa8c1852a9a->enter($__internal_d1f1f6cbe2b41fd6ab4ba0b687928e440149c8659bf5d46be808faa8c1852a9a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:ticket.html.twig"));
+        $__internal_0ba10e6f563246e27adcc58ecdfe5a0bd5362484339b96fb54daef34d06239dc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0ba10e6f563246e27adcc58ecdfe5a0bd5362484339b96fb54daef34d06239dc->enter($__internal_0ba10e6f563246e27adcc58ecdfe5a0bd5362484339b96fb54daef34d06239dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:ticket.html.twig"));
 
-        $__internal_eba8e3f40bfdd00a3fc1b47fef1b55ea4f3860b4f8639c46ea8db784d6fe65ba = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_eba8e3f40bfdd00a3fc1b47fef1b55ea4f3860b4f8639c46ea8db784d6fe65ba->enter($__internal_eba8e3f40bfdd00a3fc1b47fef1b55ea4f3860b4f8639c46ea8db784d6fe65ba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:ticket.html.twig"));
+        $__internal_ccce51e50917c426868d087321eeacac17f316f48248285ec902a0ccfa2a85d3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ccce51e50917c426868d087321eeacac17f316f48248285ec902a0ccfa2a85d3->enter($__internal_ccce51e50917c426868d087321eeacac17f316f48248285ec902a0ccfa2a85d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:ticket.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d1f1f6cbe2b41fd6ab4ba0b687928e440149c8659bf5d46be808faa8c1852a9a->leave($__internal_d1f1f6cbe2b41fd6ab4ba0b687928e440149c8659bf5d46be808faa8c1852a9a_prof);
+        $__internal_0ba10e6f563246e27adcc58ecdfe5a0bd5362484339b96fb54daef34d06239dc->leave($__internal_0ba10e6f563246e27adcc58ecdfe5a0bd5362484339b96fb54daef34d06239dc_prof);
 
         
-        $__internal_eba8e3f40bfdd00a3fc1b47fef1b55ea4f3860b4f8639c46ea8db784d6fe65ba->leave($__internal_eba8e3f40bfdd00a3fc1b47fef1b55ea4f3860b4f8639c46ea8db784d6fe65ba_prof);
+        $__internal_ccce51e50917c426868d087321eeacac17f316f48248285ec902a0ccfa2a85d3->leave($__internal_ccce51e50917c426868d087321eeacac17f316f48248285ec902a0ccfa2a85d3_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_55e8660970333c3dfb50120e08c368a73f5206ddd2b2e905ff45243eea1bacb0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_55e8660970333c3dfb50120e08c368a73f5206ddd2b2e905ff45243eea1bacb0->enter($__internal_55e8660970333c3dfb50120e08c368a73f5206ddd2b2e905ff45243eea1bacb0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_c38e2ea6777ce09ebfc99d54aa1b44f92a4eaa36dd342f80b2c808d1f5245ba2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c38e2ea6777ce09ebfc99d54aa1b44f92a4eaa36dd342f80b2c808d1f5245ba2->enter($__internal_c38e2ea6777ce09ebfc99d54aa1b44f92a4eaa36dd342f80b2c808d1f5245ba2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_37f23b496830873e1a92eaf0873cd695158c7627e3441c6b0586de2e672f40a9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_37f23b496830873e1a92eaf0873cd695158c7627e3441c6b0586de2e672f40a9->enter($__internal_37f23b496830873e1a92eaf0873cd695158c7627e3441c6b0586de2e672f40a9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_6d70a57eaa6c8ecc1d9863e5fb4a8b073ff40cb3e991bb382f7878ccc365f9b1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6d70a57eaa6c8ecc1d9863e5fb4a8b073ff40cb3e991bb382f7878ccc365f9b1->enter($__internal_6d70a57eaa6c8ecc1d9863e5fb4a8b073ff40cb3e991bb382f7878ccc365f9b1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "
@@ -212,15 +212,16 @@ class __TwigTemplate_4e5a19784f2917355d2f21ab23e93e6f9ac98fd2cb0eb1b0530ef4252b6
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ticket'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 90
-        echo " \t
- 
- 
-  <div class=\"form-group text-right\">
-    <input formnovalidate type=\"submit\" id=\"bouton\" class=\"btn btn-primary\" value=\"Valider\" />
+        echo "   <div>
+\t\t<div style=\"text-align:right\">
+\t\t\t<a href=\"../\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a>
+\t\t\t<a href=\"javascript:history.go(-1)\"><input type=\"button\" class=\"btn btn-primary\" value=\"< Etape précédente\" /></a>
+\t\t\t<input type=\"submit\" class=\"btn btn-success\" value=\"Etape suivante >\" />
+\t\t</div>
 \t</div>
   
   ";
-        // line 97
+        // line 98
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 </div>
@@ -244,10 +245,10 @@ class __TwigTemplate_4e5a19784f2917355d2f21ab23e93e6f9ac98fd2cb0eb1b0530ef4252b6
 
 ";
         
-        $__internal_37f23b496830873e1a92eaf0873cd695158c7627e3441c6b0586de2e672f40a9->leave($__internal_37f23b496830873e1a92eaf0873cd695158c7627e3441c6b0586de2e672f40a9_prof);
+        $__internal_6d70a57eaa6c8ecc1d9863e5fb4a8b073ff40cb3e991bb382f7878ccc365f9b1->leave($__internal_6d70a57eaa6c8ecc1d9863e5fb4a8b073ff40cb3e991bb382f7878ccc365f9b1_prof);
 
         
-        $__internal_55e8660970333c3dfb50120e08c368a73f5206ddd2b2e905ff45243eea1bacb0->leave($__internal_55e8660970333c3dfb50120e08c368a73f5206ddd2b2e905ff45243eea1bacb0_prof);
+        $__internal_c38e2ea6777ce09ebfc99d54aa1b44f92a4eaa36dd342f80b2c808d1f5245ba2->leave($__internal_c38e2ea6777ce09ebfc99d54aa1b44f92a4eaa36dd342f80b2c808d1f5245ba2_prof);
 
     }
 
@@ -263,7 +264,7 @@ class __TwigTemplate_4e5a19784f2917355d2f21ab23e93e6f9ac98fd2cb0eb1b0530ef4252b6
 
     public function getDebugInfo()
     {
-        return array (  224 => 97,  215 => 90,  203 => 85,  196 => 81,  190 => 78,  179 => 70,  172 => 66,  166 => 63,  157 => 57,  150 => 53,  144 => 50,  135 => 44,  128 => 40,  122 => 37,  113 => 31,  106 => 27,  100 => 24,  97 => 22,  93 => 20,  90 => 19,  88 => 18,  85 => 17,  81 => 16,  76 => 15,  74 => 14,  70 => 12,  61 => 9,  58 => 8,  54 => 7,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  225 => 98,  215 => 90,  203 => 85,  196 => 81,  190 => 78,  179 => 70,  172 => 66,  166 => 63,  157 => 57,  150 => 53,  144 => 50,  135 => 44,  128 => 40,  122 => 37,  113 => 31,  106 => 27,  100 => 24,  97 => 22,  93 => 20,  90 => 19,  88 => 18,  85 => 17,  81 => 16,  76 => 15,  74 => 14,  70 => 12,  61 => 9,  58 => 8,  54 => 7,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -365,11 +366,12 @@ class __TwigTemplate_4e5a19784f2917355d2f21ab23e93e6f9ac98fd2cb0eb1b0530ef4252b6
   </div>
    </div>
   {% endfor %}
- \t
- 
- 
-  <div class=\"form-group text-right\">
-    <input formnovalidate type=\"submit\" id=\"bouton\" class=\"btn btn-primary\" value=\"Valider\" />
+   <div>
+\t\t<div style=\"text-align:right\">
+\t\t\t<a href=\"../\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a>
+\t\t\t<a href=\"javascript:history.go(-1)\"><input type=\"button\" class=\"btn btn-primary\" value=\"< Etape précédente\" /></a>
+\t\t\t<input type=\"submit\" class=\"btn btn-success\" value=\"Etape suivante >\" />
+\t\t</div>
 \t</div>
   
   {{ form_end(form) }}
