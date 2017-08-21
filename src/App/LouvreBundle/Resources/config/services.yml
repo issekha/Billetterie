@@ -12,10 +12,4 @@ services:
         class: App\LouvreBundle\Services\ValidTime
         
     app_louvre.email:
-        class: App\LouvreBundle\Services\ApplicationMailer
-        
-
-
-
-
- 
+        class: App\LouvreBundle\Services\ApplicationMailer        

@@ -95,6 +95,9 @@
     <parameter key="mailer_user">dsetdb@gmail.com</parameter>
     <parameter key="mailer_password">ADEyemi01</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+    <parameter key="stripe_key">null</parameter>
+    <parameter key="stripe_private_key">sk_test_8vdRwzS3fzDSSYAyG6I8VQir</parameter>
+    <parameter key="stripe_public_key">pk_test_JnHnHbzCKM5CxeKzQyI3YfWk</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
@@ -459,7 +462,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>A3pLMDDlRa</argument>
                 <argument>0</argument>
-                <argument>JlLRTvQiv3sgjeGkI25l9Q</argument>
+                <argument>XDavVUqD-esKpdSEcAb8qA</argument>
                 <argument>C:\wamp64\www\Billetterie\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -642,7 +645,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>pLB6tE6ntT</argument>
       <argument>0</argument>
-      <argument>JlLRTvQiv3sgjeGkI25l9Q</argument>
+      <argument>XDavVUqD-esKpdSEcAb8qA</argument>
       <argument>C:\wamp64\www\Billetterie\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -652,7 +655,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>hm+GgvbCAt</argument>
       <argument>0</argument>
-      <argument>JlLRTvQiv3sgjeGkI25l9Q</argument>
+      <argument>XDavVUqD-esKpdSEcAb8qA</argument>
       <argument>C:\wamp64\www\Billetterie\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1887,7 +1890,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>599b18405d0fb8.57029160</argument>
+            <argument>599b330ea43bb7.78455350</argument>
           </service>
         </argument>
       </argument>
@@ -2035,7 +2038,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>599b18405d0fb8.57029160</argument>
+            <argument>599b330ea43bb7.78455350</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

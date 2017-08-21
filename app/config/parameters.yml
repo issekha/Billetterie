@@ -10,4 +10,6 @@ parameters:
     mailer_user: dsetdb@gmail.com
     mailer_password: ADEyemi01
     secret: ThisTokenIsNotSoSecretChangeIt
-    locale: fr
+    stripe_key: null
+    stripe_private_key: sk_test_8vdRwzS3fzDSSYAyG6I8VQir
+    stripe_public_key: pk_test_JnHnHbzCKM5CxeKzQyI3YfWk

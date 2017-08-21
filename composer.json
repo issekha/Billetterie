@@ -1,5 +1,5 @@
 {
-    "name": "appLouvre/framework-standard-edition",
+    "name": "app-louvre/framework-standard-edition",
     "license": "proprietary",
     "type": "project",
     "autoload": {
