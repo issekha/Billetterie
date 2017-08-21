@@ -17,30 +17,34 @@ class TicketType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
+	public function buildForm(FormBuilderInterface $builder, array $options)
+	{
+		$builder
 			->add('name',            TextType::class)
 			->add('firstName',            TextType::class)
 			->add('pays',   CountryType::class, [
-                'label'             => 'Pays',
-                'preferred_choices' => ['FR'],
-            ])
-            ->add('birthDate', BirthdayType::class, ['label'    => 'Date de naissance'])
-			->add('lowRate',  CheckboxType::class, array(
+				'label'             => 'Pays',
+				'preferred_choices' => ['FR'],
+			])
+			->add('birthDate', BirthdayType::class, [
+				'label'    => 'Date de naissance',
+				'format'=> 'ddMMMyyyy',
+
+			])
+			->add('lowRate',  CheckboxType::class,[
 				'required' => false,
-			));
-        
-    }
+			]);
+
+	}
     
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'App\LouvreBundle\Entity\Ticket'
-        ));
+        ]);
     }
 
     /**

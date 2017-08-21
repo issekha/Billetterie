@@ -16,17 +16,21 @@ class ApplicationMailer
   {
     $session = new Session();
 
-
-      //  Envoie d'email
+      //  Preparation de l'email
+	  
       $message = \Swift_Message::newInstance();
       $message->setSubject("Votre réservation pour le musée du Louvre");
       $message->setFrom('dsetdb@gmail.com');
       $message->setTo($session->get('email'));
-      // pour envoyer le message en HTML
+	  
+      // Envoyer le message en HTML
+	  
       $message->setBody(
           $mailBodyHTML,
           'text/html');
+	  
       //envoi du message
+	  
       $mailer->send($message);
   }
 }

@@ -1,57 +1,55 @@
 
-<p><img src="http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg" alt="le Louvre" style="float:left;"></p><br/>
-
-
-
-<h2> # {{ orderCode }} </h2><br />
+<p><img src="http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg" alt="le Louvre" style="float:left;"></p><br />
 
 
 <strong>Adresse e-mail</strong> : {{ email }} <br />
 
-<strong>Date de la réservation</strong> : {{ date_reservation|date("d/m/Y") }} <br />
+<strong>Commandé le </strong> : {{ orderDate|date("d/m/Y") }} <br />
+
+<strong>Pour le</strong> : {{ visitDate|date("d/m/Y") }} <br />
 
 <strong>Type de billet</strong> : 
 
-{% if type_billet == 1%} 
-Journée 
+{% if ticketsType == 1%} 
+	Journée 
 
-{% elseif type_billet == 2 %}
-Demi-Journée
+{% elseif ticketsType == 2 %}
+	Demi-Journée
 {% endif %}
 <br />
 
-<strong>Nombre de billet</strong> : {{ nombre_billet }} <br />
+<strong>Nombre de billet</strong> : {{ ticketsNbr }} <br />
 
 <strong>Numéro de Commande</strong> : {{ orderCode }} <br />
 
  <br />
 
-{% for tickets in nom %}
+{% for tickets in allTickets %}
   
-<strong>Nom</strong> : {{ tickets.name }} <br /> 
-<strong>Prenom</strong> : {{ tickets.firstName }} <br />
-<strong>date de naissance</strong> : {{tickets.birthDate|date("d/m/Y")}} <br />
-<strong>Nationalité</strong> : {{tickets.pays}} <br />
-<strong>Tarif réduit</strong> : 
-{% if tickets.lowRate == true %} 
-Oui
-{% elseif tickets.lowRate == false %}
-Non
-{% endif %}
-<br />
-<strong>Type de tarif</strong> : 
-{% if tickets.ticketsRate == 1 %} 
-Enfant
-{% elseif tickets.ticketsRate == 2 %}
-Normal
-{% elseif tickets.ticketsRate == 3 %}
-Senior
-{% elseif tickets.ticketsRate == 4 %}
-Tarif réduit
-{% endif %}
-<br />
-<strong>prix</strong> : {{tickets.prix}}€
- <hr>
+	<strong>Nom</strong> : {{ tickets.name }} <br /> 
+	<strong>Prenom</strong> : {{ tickets.firstName }} <br />
+	<strong>date de naissance</strong> : {{tickets.birthDate|date("d/m/Y")}} <br />
+	<strong>Nationalité</strong> : {{tickets.pays}} <br />
+	<strong>Tarif réduit</strong> : 
+	{% if tickets.lowRate == true %} 
+		Oui
+	{% elseif tickets.lowRate == false %}
+		Non
+	{% endif %}
+	<br />
+	<strong>Type de tarif</strong> : 
+	{% if tickets.ticketsRate == 1 %} 
+		Enfant
+	{% elseif tickets.ticketsRate == 2 %}
+		Normal
+	{% elseif tickets.ticketsRate == 3 %}
+		Senior
+	{% elseif tickets.ticketsRate == 4 %}
+		Tarif réduit
+	{% endif %}
+	<br />
+	<strong>prix</strong> : {{tickets.prix}}€
+	 <hr>
  {% endfor %}
 
 <strong>Total prix</strong> : {{total}}€

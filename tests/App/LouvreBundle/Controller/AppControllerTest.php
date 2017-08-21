@@ -30,14 +30,14 @@ class AppControllerTest extends KernelTestCase
 	
 	public function testprovideUrls()
     {
-        return array(
-            array('/'),
-            array('/step/1'),
-            array('/step/2'),
-            array('/step/3'),
-            array('/step/4'),
+		return [
+			['/'],
+			['/step/1'],
+			['/step/2'],
+			['/step/3'],
+			['/step/4'],
             
-            ); 
+		]; 
     }
 
     public function testOrder(){
@@ -58,29 +58,27 @@ class AppControllerTest extends KernelTestCase
     }
 
     public function testTicket()
-        {
-            $ticket = new Ticket();
-            $ticket->setName('Martin');
-            $ticket->setFirstName('jager');
-            $ticket->setBirthDate(new \DateTime('1977/10/10'));
-            $ticket->setPays('France');
-            $ticket->setLowRate(FALSE);
-            $ticket->setTicketsRate(2);
-            $ticket->setPrix('16');
+	{
+		$ticket = new Ticket();
+		$ticket->setName('Martin');
+		$ticket->setFirstName('baby');
+		$ticket->setBirthDate(new \DateTime('2015/10/10'));
+		$ticket->setPays('France');
+		$ticket->setLowRate(FALSE);
+		$ticket->setTicketsRate(5);
+		$ticket->setPrix('0');
 
-            $this->assertEquals('Martin', $ticket->getName());
-            $this->assertEquals('jager', $ticket->getFirstName());
-            $this->assertEquals('France', $ticket->getPays());
-            $this->assertEquals(new \DateTime('1977/10/10'), $ticket->getBirthDate());
-            $this->assertEquals(FALSE, $ticket->getLowRate());
-            $this->assertEquals('16', $ticket->getPrix());
-        }
+		$this->assertEquals('Martin', $ticket->getName());
+		$this->assertEquals('baby', $ticket->getFirstName());
+		$this->assertEquals('France', $ticket->getPays());
+		$this->assertEquals(new \DateTime('2015/10/10'), $ticket->getBirthDate());
+		$this->assertEquals(FALSE, $ticket->getLowRate());
+		$this->assertEquals('0', $ticket->getPrix());
+	}
 
     public function testTicketNull()
         {
             $order = new Order();
-
-     
             $i = 0;
             while ($i != 3){
      
@@ -94,15 +92,11 @@ class AppControllerTest extends KernelTestCase
                 $ticket->setTicketsRate(2);
                 $ticket->setPrix(12);
                 $order->getTickets()->add($ticket);
-               
      
                 $i++;  
             }
      
             $this->assertNotNull($ticket->getOrder());
-     
-
-
         }
 
     public function testOrderForm()

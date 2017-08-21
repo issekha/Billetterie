@@ -17,29 +17,33 @@ class ValidLimit
    * @param string $text
    * @return bool
    */
-  public function limit($em, $redirection)
-  {
-    $session = new Session();
-    //repository de réservation
-    $repository = $em->getRepository('AppLouvreBundle:Order');
-    $limitation = $repository->OrderLimit($session->get('visitDate'));
-    //boucle pour limiter le nombre de billet par rapport au nombre de billet pour la date
-    foreach ($limitation as $key => $limit) {
-      
-      foreach ($limit as $key => $lim) {
-        
-        $lim = intval($lim);
-        
-        $lim1 = $lim + $session->get('ticketsNbr');
-        if ($lim1 > 1000){
-          $session->clear();
-          $session->getFlashBag()->add('errors', 'Tous les billets pour cette date ont été vendus, merci de choisir une autre date');
-          return $redirection;
-        }
-        else{
-          return 0;
-        }
-      }
-    }
+	public function limit($em, $redirection)
+	{
+		$session = new Session();
+
+		//Verification du nombre de billet pour la date en BDD
+
+		$repository = $em->getRepository('AppLouvreBundle:Order');
+		$limitation = $repository->OrderLimit($session->get('visitDate'));
+
+		//boucle pour limiter le nombre de billet par rapport au nombre de billet réservé pour la date
+		foreach ($limitation as $key => $limit) {
+
+			foreach ($limit as $key => $lim) {
+
+				$lim = intval($lim);
+
+				$museumLimit = $lim + $session->get('ticketsNbr');
+				if ($museumLimit > 5){
+					$session->clear();
+					$session->getFlashBag()->add('errors', 'Tous les billets pour cette date ont été vendus, merci de choisir une autre date');
+					return $redirection;
+				}
+				else
+				{
+				  return 0;
+				}
+			}
+		}
   }
 }

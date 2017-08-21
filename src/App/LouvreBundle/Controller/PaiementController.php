@@ -63,11 +63,12 @@ class PaiementController extends Controller
 			$mailer = $this->get('mailer');
 			$mailBodyHTML = $this->render('AppLouvreBundle:App:email.html.twig', [
 				'email'               =>     $session->get('email'),
-				'date_reservation'    =>     $session->get('visitDate'),
-				'type_billet'         =>     $session->get('ticketsType'),
-				'nombre_billet'       =>     $session->get('ticketsNbr'),
+				'orderDate'    =>     $session->get('orderDate'),
+				'visitDate'    =>     $session->get('visitDate'),
+				'ticketsType'         =>     $session->get('ticketsType'),
+				'ticketsNbr'       =>     $session->get('ticketsNbr'),
 				'orderCode'           =>     $session->get('orderCode'),
-				'nom'                 =>     $session->get('tickets'),
+				'allTickets'                 =>     $session->get('tickets'),
 				'total'               =>     $session->get('prixTotal'),
 			])->getContent();
 
@@ -87,9 +88,10 @@ class PaiementController extends Controller
 
 			  ]);
 
-			$session->getFlashBag()->add('success', 'Votre commande a été validée, vous recevrez vos billets par email, Merci de votre achat.');
-			$session->clear();
+			$session->getFlashBag()->add('success', 'Votre commande a été validée !');
 			return $this->redirectToRoute('app_louvre_confirm');
+			$session->clear();
+			
 		}
 
 		return $this->render('AppLouvreBundle:App:resume.html.twig', array(

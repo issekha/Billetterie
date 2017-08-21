@@ -15,149 +15,147 @@ class __TwigTemplate_4d8ca81f20ec024f9a2137eb3177fe83cf858a2b8f7ab9fcaba038c287d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde->enter($__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
+        $__internal_67e3df4b67f6b773f9b5ce4d3651fef50de204fd6b0d205a9cec81f596aa4834 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_67e3df4b67f6b773f9b5ce4d3651fef50de204fd6b0d205a9cec81f596aa4834->enter($__internal_67e3df4b67f6b773f9b5ce4d3651fef50de204fd6b0d205a9cec81f596aa4834_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
 
-        $__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4->enter($__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
+        $__internal_dc7acf6343246edd1881018bb126eba00f4da9ed19dcfdafac0d67eb897a8e79 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_dc7acf6343246edd1881018bb126eba00f4da9ed19dcfdafac0d67eb897a8e79->enter($__internal_dc7acf6343246edd1881018bb126eba00f4da9ed19dcfdafac0d67eb897a8e79_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
 
         // line 1
         echo "
-<p><img src=\"http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg\" alt=\"le Louvre\" style=\"float:left;\"></p><br/>
-
-
-
-<h2> # ";
-        // line 6
-        echo twig_escape_filter($this->env, (isset($context["orderCode"]) ? $context["orderCode"] : $this->getContext($context, "orderCode")), "html", null, true);
-        echo " </h2><br />
+<p><img src=\"http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg\" alt=\"le Louvre\" style=\"float:left;\"></p><br />
 
 
 <strong>Adresse e-mail</strong> : ";
-        // line 9
+        // line 5
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
         echo " <br />
 
-<strong>Date de la réservation</strong> : ";
-        // line 11
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["date_reservation"]) ? $context["date_reservation"] : $this->getContext($context, "date_reservation")), "d/m/Y"), "html", null, true);
+<strong>Commandé le </strong> : ";
+        // line 7
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["orderDate"]) ? $context["orderDate"] : $this->getContext($context, "orderDate")), "d/m/Y"), "html", null, true);
+        echo " <br />
+
+<strong>Pour le</strong> : ";
+        // line 9
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["visitDate"]) ? $context["visitDate"] : $this->getContext($context, "visitDate")), "d/m/Y"), "html", null, true);
         echo " <br />
 
 <strong>Type de billet</strong> : 
 
 ";
-        // line 15
-        if (((isset($context["type_billet"]) ? $context["type_billet"] : $this->getContext($context, "type_billet")) == 1)) {
+        // line 13
+        if (((isset($context["ticketsType"]) ? $context["ticketsType"] : $this->getContext($context, "ticketsType")) == 1)) {
             echo " 
-Journée 
+\tJournée 
 
 ";
-        } elseif ((        // line 18
-(isset($context["type_billet"]) ? $context["type_billet"] : $this->getContext($context, "type_billet")) == 2)) {
-            // line 19
-            echo "Demi-Journée
+        } elseif ((        // line 16
+(isset($context["ticketsType"]) ? $context["ticketsType"] : $this->getContext($context, "ticketsType")) == 2)) {
+            // line 17
+            echo "\tDemi-Journée
 ";
         }
-        // line 21
+        // line 19
         echo "<br />
 
 <strong>Nombre de billet</strong> : ";
-        // line 23
-        echo twig_escape_filter($this->env, (isset($context["nombre_billet"]) ? $context["nombre_billet"] : $this->getContext($context, "nombre_billet")), "html", null, true);
+        // line 21
+        echo twig_escape_filter($this->env, (isset($context["ticketsNbr"]) ? $context["ticketsNbr"] : $this->getContext($context, "ticketsNbr")), "html", null, true);
         echo " <br />
 
 <strong>Numéro de Commande</strong> : ";
-        // line 25
+        // line 23
         echo twig_escape_filter($this->env, (isset($context["orderCode"]) ? $context["orderCode"] : $this->getContext($context, "orderCode")), "html", null, true);
         echo " <br />
 
  <br />
 
 ";
-        // line 29
+        // line 27
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["nom"]) ? $context["nom"] : $this->getContext($context, "nom")));
+        $context['_seq'] = twig_ensure_traversable((isset($context["allTickets"]) ? $context["allTickets"] : $this->getContext($context, "allTickets")));
         foreach ($context['_seq'] as $context["_key"] => $context["tickets"]) {
-            // line 30
+            // line 28
             echo "  
-<strong>Nom</strong> : ";
-            // line 31
+\t<strong>Nom</strong> : ";
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "name", array()), "html", null, true);
             echo " <br /> 
-<strong>Prenom</strong> : ";
-            // line 32
+\t<strong>Prenom</strong> : ";
+            // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "firstName", array()), "html", null, true);
             echo " <br />
-<strong>date de naissance</strong> : ";
-            // line 33
+\t<strong>date de naissance</strong> : ";
+            // line 31
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["tickets"], "birthDate", array()), "d/m/Y"), "html", null, true);
             echo " <br />
-<strong>Nationalité</strong> : ";
-            // line 34
+\t<strong>Nationalité</strong> : ";
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "pays", array()), "html", null, true);
             echo " <br />
-<strong>Tarif réduit</strong> : 
-";
-            // line 36
+\t<strong>Tarif réduit</strong> : 
+\t";
+            // line 34
             if (($this->getAttribute($context["tickets"], "lowRate", array()) == true)) {
                 echo " 
-Oui
-";
-            } elseif (($this->getAttribute(            // line 38
+\t\tOui
+\t";
+            } elseif (($this->getAttribute(            // line 36
 $context["tickets"], "lowRate", array()) == false)) {
-                // line 39
-                echo "Non
-";
+                // line 37
+                echo "\t\tNon
+\t";
             }
+            // line 39
+            echo "\t<br />
+\t<strong>Type de tarif</strong> : 
+\t";
             // line 41
-            echo "<br />
-<strong>Type de tarif</strong> : 
-";
-            // line 43
             if (($this->getAttribute($context["tickets"], "ticketsRate", array()) == 1)) {
                 echo " 
-Enfant
-";
-            } elseif (($this->getAttribute(            // line 45
+\t\tEnfant
+\t";
+            } elseif (($this->getAttribute(            // line 43
 $context["tickets"], "ticketsRate", array()) == 2)) {
-                // line 46
-                echo "Normal
-";
-            } elseif (($this->getAttribute(            // line 47
+                // line 44
+                echo "\t\tNormal
+\t";
+            } elseif (($this->getAttribute(            // line 45
 $context["tickets"], "ticketsRate", array()) == 3)) {
-                // line 48
-                echo "Senior
-";
-            } elseif (($this->getAttribute(            // line 49
+                // line 46
+                echo "\t\tSenior
+\t";
+            } elseif (($this->getAttribute(            // line 47
 $context["tickets"], "ticketsRate", array()) == 4)) {
-                // line 50
-                echo "Tarif réduit
-";
+                // line 48
+                echo "\t\tTarif réduit
+\t";
             }
-            // line 52
-            echo "<br />
-<strong>prix</strong> : ";
-            // line 53
+            // line 50
+            echo "\t<br />
+\t<strong>prix</strong> : ";
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "prix", array()), "html", null, true);
             echo "€
- <hr>
+\t <hr>
  ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tickets'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 54
         echo "
 <strong>Total prix</strong> : ";
-        // line 57
+        // line 55
         echo twig_escape_filter($this->env, (isset($context["total"]) ? $context["total"] : $this->getContext($context, "total")), "html", null, true);
         echo "€
 ";
         
-        $__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde->leave($__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde_prof);
+        $__internal_67e3df4b67f6b773f9b5ce4d3651fef50de204fd6b0d205a9cec81f596aa4834->leave($__internal_67e3df4b67f6b773f9b5ce4d3651fef50de204fd6b0d205a9cec81f596aa4834_prof);
 
         
-        $__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4->leave($__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4_prof);
+        $__internal_dc7acf6343246edd1881018bb126eba00f4da9ed19dcfdafac0d67eb897a8e79->leave($__internal_dc7acf6343246edd1881018bb126eba00f4da9ed19dcfdafac0d67eb897a8e79_prof);
 
     }
 
@@ -173,7 +171,7 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
 
     public function getDebugInfo()
     {
-        return array (  153 => 57,  150 => 56,  141 => 53,  138 => 52,  134 => 50,  132 => 49,  129 => 48,  127 => 47,  124 => 46,  122 => 45,  117 => 43,  113 => 41,  109 => 39,  107 => 38,  102 => 36,  97 => 34,  93 => 33,  89 => 32,  85 => 31,  82 => 30,  78 => 29,  71 => 25,  66 => 23,  62 => 21,  58 => 19,  56 => 18,  50 => 15,  43 => 11,  38 => 9,  32 => 6,  25 => 1,);
+        return array (  151 => 55,  148 => 54,  139 => 51,  136 => 50,  132 => 48,  130 => 47,  127 => 46,  125 => 45,  122 => 44,  120 => 43,  115 => 41,  111 => 39,  107 => 37,  105 => 36,  100 => 34,  95 => 32,  91 => 31,  87 => 30,  83 => 29,  80 => 28,  76 => 27,  69 => 23,  64 => 21,  60 => 19,  56 => 17,  54 => 16,  48 => 13,  41 => 9,  36 => 7,  31 => 5,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -187,59 +185,57 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
     public function getSourceContext()
     {
         return new Twig_Source("
-<p><img src=\"http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg\" alt=\"le Louvre\" style=\"float:left;\"></p><br/>
-
-
-
-<h2> # {{ orderCode }} </h2><br />
+<p><img src=\"http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg\" alt=\"le Louvre\" style=\"float:left;\"></p><br />
 
 
 <strong>Adresse e-mail</strong> : {{ email }} <br />
 
-<strong>Date de la réservation</strong> : {{ date_reservation|date(\"d/m/Y\") }} <br />
+<strong>Commandé le </strong> : {{ orderDate|date(\"d/m/Y\") }} <br />
+
+<strong>Pour le</strong> : {{ visitDate|date(\"d/m/Y\") }} <br />
 
 <strong>Type de billet</strong> : 
 
-{% if type_billet == 1%} 
-Journée 
+{% if ticketsType == 1%} 
+\tJournée 
 
-{% elseif type_billet == 2 %}
-Demi-Journée
+{% elseif ticketsType == 2 %}
+\tDemi-Journée
 {% endif %}
 <br />
 
-<strong>Nombre de billet</strong> : {{ nombre_billet }} <br />
+<strong>Nombre de billet</strong> : {{ ticketsNbr }} <br />
 
 <strong>Numéro de Commande</strong> : {{ orderCode }} <br />
 
  <br />
 
-{% for tickets in nom %}
+{% for tickets in allTickets %}
   
-<strong>Nom</strong> : {{ tickets.name }} <br /> 
-<strong>Prenom</strong> : {{ tickets.firstName }} <br />
-<strong>date de naissance</strong> : {{tickets.birthDate|date(\"d/m/Y\")}} <br />
-<strong>Nationalité</strong> : {{tickets.pays}} <br />
-<strong>Tarif réduit</strong> : 
-{% if tickets.lowRate == true %} 
-Oui
-{% elseif tickets.lowRate == false %}
-Non
-{% endif %}
-<br />
-<strong>Type de tarif</strong> : 
-{% if tickets.ticketsRate == 1 %} 
-Enfant
-{% elseif tickets.ticketsRate == 2 %}
-Normal
-{% elseif tickets.ticketsRate == 3 %}
-Senior
-{% elseif tickets.ticketsRate == 4 %}
-Tarif réduit
-{% endif %}
-<br />
-<strong>prix</strong> : {{tickets.prix}}€
- <hr>
+\t<strong>Nom</strong> : {{ tickets.name }} <br /> 
+\t<strong>Prenom</strong> : {{ tickets.firstName }} <br />
+\t<strong>date de naissance</strong> : {{tickets.birthDate|date(\"d/m/Y\")}} <br />
+\t<strong>Nationalité</strong> : {{tickets.pays}} <br />
+\t<strong>Tarif réduit</strong> : 
+\t{% if tickets.lowRate == true %} 
+\t\tOui
+\t{% elseif tickets.lowRate == false %}
+\t\tNon
+\t{% endif %}
+\t<br />
+\t<strong>Type de tarif</strong> : 
+\t{% if tickets.ticketsRate == 1 %} 
+\t\tEnfant
+\t{% elseif tickets.ticketsRate == 2 %}
+\t\tNormal
+\t{% elseif tickets.ticketsRate == 3 %}
+\t\tSenior
+\t{% elseif tickets.ticketsRate == 4 %}
+\t\tTarif réduit
+\t{% endif %}
+\t<br />
+\t<strong>prix</strong> : {{tickets.prix}}€
+\t <hr>
  {% endfor %}
 
 <strong>Total prix</strong> : {{total}}€

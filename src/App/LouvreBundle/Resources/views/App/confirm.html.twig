@@ -2,7 +2,25 @@
 
 {% block content %}
 
-  
-  Hello world!
-  
+	<h1><strong>Etape 4:</strong> Confirmation de votre commande </h1> 
+	
+	{% for flashMessage in app.session.flashbag.get('success') %}
+
+			<div class="alert alert-success" >
+			  {{ flashMessage }}
+			</div>
+	{% endfor %}
+	
+	{#Texte confirmation #}
+	<div class="jumbotron">
+		<div class="container text-center">
+			<h1>Merci pour votre achat</h1>
+			<p>Vous allez recevoir vos billets par email</p>
+			<p>
+				 <a href="{{ path('app_louvre_homePage') }}" class="btn btn-primary">Accueil</a>
+				 <a href="{{ path('app_louvre_order') }}" class="btn btn-info">Re-Commander</a>
+			</p>
+		</div>
+	</div>
+		
 {% endblock %}

@@ -8,7 +8,7 @@ class OrderRepository extends \Doctrine\ORM\EntityRepository
 	public function OrderLimit($date)
 	{
 
-
+		// Somme de tous les Nombre de billets vendu pour la date de visite
 		$qb = $this->createQueryBuilder('a');
 
 		$qb

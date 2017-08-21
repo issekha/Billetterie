@@ -1,25 +1,16 @@
 {% extends "AppLouvreBundle::layout.html.twig" %}
 
 {% block content %}
-
-<div class="view">
-			<!--Intro content-->
-			<div class="jumbotron">
-				<div class="container text-center">
-					<h1>Espace Billetterie</h1>
-					<p>Evitez les files d'attentes en 4 étapes</p>
-					<p>
-						 <a href="{{ path('app_louvre_order') }}" class="btn btn-primary">COMMENCER</a>
-					</p>
-				</div>
+	{#Texte d accueille #}
+	<div class="view">
+		<div class="jumbotron">
+			<div class="container text-center">
+				<h1>Espace Billetterie</h1>
+				<p>Evitez les files d'attentes en 4 étapes</p>
+				<p>
+					 <a href="{{ path('app_louvre_order') }}" class="btn btn-primary">COMMENCER</a>
+				</p>
 			</div>
 		</div>
-
-{% for flashMessage in app.session.flashbag.get('success') %}
-      
-      <div class="alert alert-success" >
-          {{ flashMessage }}
-      </div>
-{% endfor %}
-
+	</div>
 {% endblock %}

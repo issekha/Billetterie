@@ -2,6 +2,8 @@
 
 {% block content %}
 
+	{#Notifications#}
+	
 	{% for flashMessage in app.session.flashbag.get('success') %}
 		<div class="alert alert-success" >
           {{ flashMessage }}
@@ -16,10 +18,14 @@
     
 	<h1><strong>Etape 1:</strong> Votre commande </h1>
   	<hr>
+  	
+  	{#Formulaire#}
+  	
 	<div id="orderForm" class="well col-md-6 ">
 		<div class=" orderForm">
 			 {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
-  
+  				
+  				{#Date de visite#}
 				<div class="form-group">
 					{{ form_label(form.visitDate, "Date de visite", {'label_attr': {'class': 'col-sm-4'}}) }}
 
@@ -32,7 +38,9 @@
 					</div>
 				</div>
 				
-					<div class="form-group">
+				{#Email#}
+				
+				<div class="form-group">
 
 					{{ form_label(form.email, "Entrez votre Email ", {'label_attr': {'class': 'col-sm-4', }}) }}
 
@@ -43,7 +51,9 @@
 					  {# Génération de l'input. #}
 					  {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
 					</div>
-					</div>
+				</div>
+				
+				{#Type de billet#}
 				
 				<div class="form-group">
 					{# Génération du label. #}
@@ -57,8 +67,10 @@
 					  {{ form_widget(form.ticketsType, {'attr': {'class': 'form-control'}}) }}
 					</div>
 				</div>
-			  
-				  <span class="form-group">
+				
+				{#Nombre de billet + boutons de navigation#}
+				
+				<span class="form-group">
 					{# Génération du label. #}
 					{{ form_label(form.ticketsNbr, "Nombre de billet", {'label_attr': {'class': 'col-sm-4'}}) }}
 
@@ -69,23 +81,23 @@
 					  {# Génération de l'input. #}
 					  {{ form_widget(form.ticketsNbr, {'attr': {'class': 'form-control'}}) }}
 					</span>
-					
+
 					<input type="submit" class="btn btn-info" id="stp1bouton" value="Etape 2 >" />
 					<a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a>
-				  </span>
-
+				</span>
 			{{ form_end(form) }}
-	
 		</div>
 	</div>
- 
-   <div id="infosHoraires" class="col-md-4">
-  		<div class="row col-md-8">
-		
+	
+ 	{#Horaires#}
+ 	
+	<div id="infosHoraires" class="col-md-4">
+		<div class="row col-md-8">
+
 			<div class="panel panel-default">
-  				<div class="panel-heading">
-  	  				<h3 class="panel-title">Horaires :</h3>
-  				</div>
+				<div class="panel-heading">
+					<h3 class="panel-title">Horaires :</h3>
+				</div>
 				<ul class="list-group">
 				  <li class="list-group-item">Lundi    : 09h00-18h00</li>
 				  <li class="list-group-item"><strong>Mardi    : Fermé</strong></li>
@@ -97,5 +109,5 @@
 				</ul>
 			</div>
 		</div>
-  </div>
+	</div>
 {% endblock %}

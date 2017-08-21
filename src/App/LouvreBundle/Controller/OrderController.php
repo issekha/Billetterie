@@ -42,7 +42,7 @@ class OrderController extends Controller
 			//Pas plus de 1000 billets/jours.
 			if (!$limite->limit($em, $redirection)){
 				//Pas de billet journée après 14h.
-				if (!$stopTicket->ticketsValid($redirection)){
+				if (!$stopTicket->ticketsTypeValid($redirection)){
 
 					$session->set('email', $order->getEmail());
 					$session->set('orderCode', $orderCode->generateur());
@@ -68,6 +68,7 @@ class OrderController extends Controller
 	    $session = new Session();
 
 	    //Calcul du tarif de chaque billet (service).
+		
 	    $calculTarif = $this->container->get('app_louvre.rate');
 
 	    $calculTarif->tarif();
@@ -87,11 +88,11 @@ class OrderController extends Controller
 		//Vers récapitulatif de la commande.
         return $this->render('AppLouvreBundle:App:resume.html.twig', array(
 			'email' => 					$session->get('email'),
-			'date_reservation' => 		$session->get('visitDate'),
-			'type_billet'		 =>			$session->get('ticketsType'),
-			'nombre_billet'	 =>			$session->get('ticketsNbr'),
+			'orderDate' => 		$session->get('visitDate'),
+			'ticketsType'		 =>			$session->get('ticketsType'),
+			'ticketsNbr'	 =>			$session->get('ticketsNbr'),
 			'orderCode'		 =>			$session->get('orderCode'),
-			'nom'				 =>			$session->get('tickets'),
+			'allTickets'				 =>			$session->get('tickets'),
 			'total'			 =>			$prixTotal,
 			'prix'			=>			$prix,
 	    ));
