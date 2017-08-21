@@ -2,6 +2,7 @@
     "name": "app-louvre/framework-standard-edition",
     "license": "proprietary",
     "type": "project",
+	"description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-4": {
             "": "src/"
