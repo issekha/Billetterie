@@ -1,6 +1,14 @@
 {% extends "AppLouvreBundle::layout.html.twig" %}
 
 {% block content %}
+	
+	{# Notifications #}
+
+	{% for flashMessage in app.session.flashbag.get('errors') %}
+	  <div class="alert alert-danger">
+		  {{ flashMessage }}
+	  </div>
+	{% endfor %}
 
 	<h1><strong>Etape 3:</strong> Récapitulatif de votre commande </h1> 
 

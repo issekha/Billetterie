@@ -93,6 +93,11 @@ class PaiementController extends Controller
 			return $this->redirectToRoute('app_louvre_confirm');
 			
 		}
+		else
+		{
+			$session->getFlashBag()->add('warning', 'Une erreur est survenue dans votre commande ');
+			return $this->redirectToRoute('app_louvre_paiement');
+		}
 
 		return $this->render('AppLouvreBundle:App:resume.html.twig', [
 		  'prix'			=>			$prix,
