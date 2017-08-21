@@ -34,7 +34,7 @@ class ValidLimit
 				$lim = intval($lim);
 
 				$museumLimit = $lim + $session->get('ticketsNbr');
-				if ($museumLimit > 5){
+				if ($museumLimit > 1000){
 					$session->clear();
 					$session->getFlashBag()->add('errors', 'Tous les billets pour cette date ont été vendus, merci de choisir une autre date');
 					return $redirection;
