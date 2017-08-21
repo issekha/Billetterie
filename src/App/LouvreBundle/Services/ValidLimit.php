@@ -24,7 +24,7 @@ class ValidLimit
 		//Verification du nombre de billet pour la date en BDD
 
 		$repository = $em->getRepository('AppLouvreBundle:Order');
-		$limitation = $repository->OrderLimit($session->get('visitDate'));
+		$limitation = $repository->orderLimit($session->get('visitDate'));
 
 		//boucle pour limiter le nombre de billet par rapport au nombre de billet réservé pour la date
 		foreach ($limitation as $key => $limit) {

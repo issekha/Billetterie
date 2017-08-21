@@ -89,17 +89,15 @@ class PaiementController extends Controller
 			  ]);
 
 			$session->getFlashBag()->add('success', 'Votre commande a été validée !');
-			return $this->redirectToRoute('app_louvre_confirm');
 			$session->clear();
+			return $this->redirectToRoute('app_louvre_confirm');
 			
 		}
 
-		return $this->render('AppLouvreBundle:App:resume.html.twig', array(
+		return $this->render('AppLouvreBundle:App:resume.html.twig', [
 		  'prix'			=>			$prix,
 		  'email'			=>			$email,
-
-
-		));
+		]);
 	}
 }
    

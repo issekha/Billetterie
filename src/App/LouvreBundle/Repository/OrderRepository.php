@@ -5,7 +5,7 @@ namespace App\LouvreBundle\Repository;
 
 class OrderRepository extends \Doctrine\ORM\EntityRepository
 {
-	public function OrderLimit($date)
+	public function orderLimit($date)
 	{
 
 		// Somme de tous les Nombre de billets vendu pour la date de visite
