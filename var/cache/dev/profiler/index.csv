@@ -25,3 +25,12 @@ a63882,::1,POST,http://localhost/Billetterie/web/app_dev.php/step/2,1503344632,,
 26c51b,::1,POST,http://localhost/Billetterie/web/app_dev.php/step/3/paiement,1503344662,,302
 1967a0,::1,GET,http://localhost/Billetterie/web/app_dev.php/step/4,1503344662,,200
 2ba9b4,::1,GET,http://localhost/Billetterie/web/app_dev.php/,1503344665,,200
+99ea6d,::1,GET,http://localhost/Billetterie/web/app_dev.php/,1503345649,,200
+07693c,::1,GET,http://localhost/Billetterie/web/app_dev.php/step/1,1503345651,,200
+03bdfe,::1,POST,http://localhost/Billetterie/web/app_dev.php/step/1,1503345661,,302
+025c50,::1,GET,http://localhost/Billetterie/web/app_dev.php/step/2,1503345662,,200
+e82ede,::1,POST,http://localhost/Billetterie/web/app_dev.php/step/2,1503345682,,302
+16d5e9,::1,GET,http://localhost/Billetterie/web/app_dev.php/step/3/resume,1503345683,,200
+feab86,::1,POST,http://localhost/Billetterie/web/app_dev.php/step/3/paiement,1503345709,,302
+b40124,::1,GET,http://localhost/Billetterie/web/app_dev.php/step/4,1503345709,,200
+24918f,::1,GET,http://localhost/Billetterie/web/app_dev.php/,1503345715,,200

@@ -21,3 +21,7 @@ app_louvre_paiement:
 app_louvre_confirm:
     path:     /step/4
     defaults: { _controller: AppLouvreBundle:App:confirm }
+
+app_louvre_error:
+    path:     /error
+    defaults: { _controller: AppLouvreBundle:App:error }

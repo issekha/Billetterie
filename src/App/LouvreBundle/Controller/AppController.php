@@ -21,7 +21,13 @@ class AppController extends Controller
    
 	// Etape 4 Confirmation de la commande
 	public function confirmAction()
-  {
-    return $this->render('AppLouvreBundle:App:confirm.html.twig');
-  }
+	{
+		return $this->render('AppLouvreBundle:App:confirm.html.twig');
+	}
+	
+	// Erreurs
+	public function errorAction()
+	{
+		return $this->render('AppLouvreBundle:App:error.html.twig');
+	}
 }
