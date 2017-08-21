@@ -15,12 +15,12 @@ class TicketsListType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('tickets', CollectionType::class, array(
+        $builder->add('tickets', CollectionType::class, [
             'entry_type' => TicketType::class,
             'constraints' => new \Symfony\Component\Validator\Constraints\Valid(),
-            'attr' => array(
-          	'class' => 'tickets')
-        ));
+            'attr' => [
+          	'class' => 'tickets']
+        ]);
     }
 	
     /**
@@ -28,9 +28,9 @@ class TicketsListType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'App\LouvreBundle\Entity\Order'
-        ));
+        ]);
     }
 
     /**

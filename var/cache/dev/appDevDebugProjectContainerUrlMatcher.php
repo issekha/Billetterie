@@ -112,22 +112,30 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         if (0 === strpos($pathinfo, '/step')) {
             // app_louvre_order
             if ($pathinfo === '/step/1') {
-                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::orderAction',  '_route' => 'app_louvre_order',);
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\OrderController::orderAction',  '_route' => 'app_louvre_order',);
             }
 
             // app_louvre_ticket
             if ($pathinfo === '/step/2') {
-                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::ticketAction',  '_route' => 'app_louvre_ticket',);
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\TicketController::ticketAction',  '_route' => 'app_louvre_ticket',);
             }
 
-            // app_louvre_resume
-            if ($pathinfo === '/step/3') {
-                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::resumeAction',  '_route' => 'app_louvre_resume',);
+            if (0 === strpos($pathinfo, '/step/3')) {
+                // app_louvre_resume
+                if ($pathinfo === '/step/3/resume') {
+                    return array (  '_controller' => 'App\\LouvreBundle\\Controller\\OrderController::resumeAction',  '_route' => 'app_louvre_resume',);
+                }
+
+                // app_louvre_paiement
+                if ($pathinfo === '/step/3/paiement') {
+                    return array (  '_controller' => 'App\\LouvreBundle\\Controller\\PaiementController::paiementAction',  '_route' => 'app_louvre_paiement',);
+                }
+
             }
 
-            // app_louvre_paiement
+            // app_louvre_confirm
             if ($pathinfo === '/step/4') {
-                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::paiementAction',  '_route' => 'app_louvre_paiement',);
+                return array (  '_controller' => 'App\\LouvreBundle\\Controller\\AppController::confirmAction',  '_route' => 'app_louvre_confirm',);
             }
 
         }

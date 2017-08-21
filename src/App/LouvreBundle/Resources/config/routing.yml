@@ -4,16 +4,20 @@ app_louvre_homePage:
 
 app_louvre_order:
     path:     /step/1
-    defaults: { _controller: AppLouvreBundle:App:order }
+    defaults: { _controller: AppLouvreBundle:Order:order }
 
 app_louvre_ticket:
     path:     /step/2
-    defaults: { _controller: AppLouvreBundle:App:ticket }
+    defaults: { _controller: AppLouvreBundle:Ticket:ticket }
 
 app_louvre_resume:
-    path:     /step/3
-    defaults: { _controller: AppLouvreBundle:App:resume }
+    path:     /step/3/resume
+    defaults: { _controller: AppLouvreBundle:Order:resume }
 
 app_louvre_paiement:
+    path:     /step/3/paiement
+    defaults: { _controller: AppLouvreBundle:Paiement:paiement }
+
+app_louvre_confirm:
     path:     /step/4
-    defaults: { _controller: AppLouvreBundle:App:paiement }
+    defaults: { _controller: AppLouvreBundle:App:confirm }

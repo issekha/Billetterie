@@ -15,130 +15,129 @@ class __TwigTemplate_4d8ca81f20ec024f9a2137eb3177fe83cf858a2b8f7ab9fcaba038c287d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7bfefd4598cf6d2af4ee3f71c27e6eed5bf8a686359c91495eb80f08e0a3cf3c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7bfefd4598cf6d2af4ee3f71c27e6eed5bf8a686359c91495eb80f08e0a3cf3c->enter($__internal_7bfefd4598cf6d2af4ee3f71c27e6eed5bf8a686359c91495eb80f08e0a3cf3c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
+        $__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde->enter($__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
 
-        $__internal_f82d6b4303d4e6ba7708f49cf20ae6cd4158e13d3698e7e63d970d320b3e33c4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f82d6b4303d4e6ba7708f49cf20ae6cd4158e13d3698e7e63d970d320b3e33c4->enter($__internal_f82d6b4303d4e6ba7708f49cf20ae6cd4158e13d3698e7e63d970d320b3e33c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
+        $__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4->enter($__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:email.html.twig"));
 
         // line 1
         echo "
 <p><img src=\"http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg\" alt=\"le Louvre\" style=\"float:left;\"></p><br/>
 
-<h1>Musée du Louvre</h1>
 
 
-<h2> Commande numero : ";
-        // line 7
+<h2> # ";
+        // line 6
         echo twig_escape_filter($this->env, (isset($context["orderCode"]) ? $context["orderCode"] : $this->getContext($context, "orderCode")), "html", null, true);
         echo " </h2><br />
 
 
 <strong>Adresse e-mail</strong> : ";
-        // line 10
+        // line 9
         echo twig_escape_filter($this->env, (isset($context["email"]) ? $context["email"] : $this->getContext($context, "email")), "html", null, true);
         echo " <br />
 
 <strong>Date de la réservation</strong> : ";
-        // line 12
+        // line 11
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["date_reservation"]) ? $context["date_reservation"] : $this->getContext($context, "date_reservation")), "d/m/Y"), "html", null, true);
         echo " <br />
 
 <strong>Type de billet</strong> : 
 
 ";
-        // line 16
+        // line 15
         if (((isset($context["type_billet"]) ? $context["type_billet"] : $this->getContext($context, "type_billet")) == 1)) {
             echo " 
 Journée 
 
 ";
-        } elseif ((        // line 19
+        } elseif ((        // line 18
 (isset($context["type_billet"]) ? $context["type_billet"] : $this->getContext($context, "type_billet")) == 2)) {
-            // line 20
+            // line 19
             echo "Demi-Journée
 ";
         }
-        // line 22
+        // line 21
         echo "<br />
 
 <strong>Nombre de billet</strong> : ";
-        // line 24
+        // line 23
         echo twig_escape_filter($this->env, (isset($context["nombre_billet"]) ? $context["nombre_billet"] : $this->getContext($context, "nombre_billet")), "html", null, true);
         echo " <br />
 
 <strong>Numéro de Commande</strong> : ";
-        // line 26
+        // line 25
         echo twig_escape_filter($this->env, (isset($context["orderCode"]) ? $context["orderCode"] : $this->getContext($context, "orderCode")), "html", null, true);
         echo " <br />
 
  <br />
 
 ";
-        // line 30
+        // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["nom"]) ? $context["nom"] : $this->getContext($context, "nom")));
         foreach ($context['_seq'] as $context["_key"] => $context["tickets"]) {
-            // line 31
+            // line 30
             echo "  
 <strong>Nom</strong> : ";
-            // line 32
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "name", array()), "html", null, true);
             echo " <br /> 
 <strong>Prenom</strong> : ";
-            // line 33
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "firstName", array()), "html", null, true);
             echo " <br />
 <strong>date de naissance</strong> : ";
-            // line 34
+            // line 33
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["tickets"], "birthDate", array()), "d/m/Y"), "html", null, true);
             echo " <br />
 <strong>Nationalité</strong> : ";
-            // line 35
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "pays", array()), "html", null, true);
             echo " <br />
 <strong>Tarif réduit</strong> : 
 ";
-            // line 37
+            // line 36
             if (($this->getAttribute($context["tickets"], "lowRate", array()) == true)) {
                 echo " 
 Oui
 ";
-            } elseif (($this->getAttribute(            // line 39
+            } elseif (($this->getAttribute(            // line 38
 $context["tickets"], "lowRate", array()) == false)) {
-                // line 40
+                // line 39
                 echo "Non
 ";
             }
-            // line 42
+            // line 41
             echo "<br />
 <strong>Type de tarif</strong> : 
 ";
-            // line 44
+            // line 43
             if (($this->getAttribute($context["tickets"], "ticketsRate", array()) == 1)) {
                 echo " 
 Enfant
 ";
-            } elseif (($this->getAttribute(            // line 46
+            } elseif (($this->getAttribute(            // line 45
 $context["tickets"], "ticketsRate", array()) == 2)) {
-                // line 47
+                // line 46
                 echo "Normal
 ";
-            } elseif (($this->getAttribute(            // line 48
+            } elseif (($this->getAttribute(            // line 47
 $context["tickets"], "ticketsRate", array()) == 3)) {
-                // line 49
+                // line 48
                 echo "Senior
 ";
-            } elseif (($this->getAttribute(            // line 50
+            } elseif (($this->getAttribute(            // line 49
 $context["tickets"], "ticketsRate", array()) == 4)) {
-                // line 51
+                // line 50
                 echo "Tarif réduit
 ";
             }
-            // line 53
+            // line 52
             echo "<br />
 <strong>prix</strong> : ";
-            // line 54
+            // line 53
             echo twig_escape_filter($this->env, $this->getAttribute($context["tickets"], "prix", array()), "html", null, true);
             echo "€
  <hr>
@@ -147,18 +146,18 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tickets'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 56
         echo "
 <strong>Total prix</strong> : ";
-        // line 58
+        // line 57
         echo twig_escape_filter($this->env, (isset($context["total"]) ? $context["total"] : $this->getContext($context, "total")), "html", null, true);
         echo "€
 ";
         
-        $__internal_7bfefd4598cf6d2af4ee3f71c27e6eed5bf8a686359c91495eb80f08e0a3cf3c->leave($__internal_7bfefd4598cf6d2af4ee3f71c27e6eed5bf8a686359c91495eb80f08e0a3cf3c_prof);
+        $__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde->leave($__internal_ab8d1ba9785ea92d9f2fd949dbde1440554cf734ef7bfead407bf29326a53fde_prof);
 
         
-        $__internal_f82d6b4303d4e6ba7708f49cf20ae6cd4158e13d3698e7e63d970d320b3e33c4->leave($__internal_f82d6b4303d4e6ba7708f49cf20ae6cd4158e13d3698e7e63d970d320b3e33c4_prof);
+        $__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4->leave($__internal_bf31bf20730e0caa8d5a49d6edf5328e70fed10c825e7d2e9c083ba9086606d4_prof);
 
     }
 
@@ -174,7 +173,7 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
 
     public function getDebugInfo()
     {
-        return array (  154 => 58,  151 => 57,  142 => 54,  139 => 53,  135 => 51,  133 => 50,  130 => 49,  128 => 48,  125 => 47,  123 => 46,  118 => 44,  114 => 42,  110 => 40,  108 => 39,  103 => 37,  98 => 35,  94 => 34,  90 => 33,  86 => 32,  83 => 31,  79 => 30,  72 => 26,  67 => 24,  63 => 22,  59 => 20,  57 => 19,  51 => 16,  44 => 12,  39 => 10,  33 => 7,  25 => 1,);
+        return array (  153 => 57,  150 => 56,  141 => 53,  138 => 52,  134 => 50,  132 => 49,  129 => 48,  127 => 47,  124 => 46,  122 => 45,  117 => 43,  113 => 41,  109 => 39,  107 => 38,  102 => 36,  97 => 34,  93 => 33,  89 => 32,  85 => 31,  82 => 30,  78 => 29,  71 => 25,  66 => 23,  62 => 21,  58 => 19,  56 => 18,  50 => 15,  43 => 11,  38 => 9,  32 => 6,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -190,10 +189,9 @@ $context["tickets"], "ticketsRate", array()) == 4)) {
         return new Twig_Source("
 <p><img src=\"http://www.louvre.fr/sites/all/themes/louvre/img/data/logo-louvre.jpg\" alt=\"le Louvre\" style=\"float:left;\"></p><br/>
 
-<h1>Musée du Louvre</h1>
 
 
-<h2> Commande numero : {{ orderCode }} </h2><br />
+<h2> # {{ orderCode }} </h2><br />
 
 
 <strong>Adresse e-mail</strong> : {{ email }} <br />

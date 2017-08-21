@@ -19,7 +19,11 @@ body {
     border-top: 1px solid #ccc;
     padding-top: 10px;
     text-align: center;
+	
+	
+	
 }
+
 
 .view {
     /* The image used */
@@ -45,6 +49,9 @@ body {
 
 h1, .well,.row,.form-group, h3{
 	text-align: center;
+}
+h1{
+	color: lightgrey;
 }
 ul{
 	list-style:none;
@@ -85,7 +92,7 @@ select{
 	margin-left: 17%;
 	
 }
-#total1{
+#total1,#total2{
 	margin-left: 25%;
 }
 #ticketsResume{
@@ -97,4 +104,10 @@ select{
 }
 .ticketsList{
 	visibility: hidden;
+}
+#allTickets{
+	margin-left: 20%;
+}
+#content{
+	background-color: black;
 }

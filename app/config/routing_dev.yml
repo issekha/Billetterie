@@ -12,3 +12,7 @@ _errors:
 
 _main:
     resource: routing.yml
+
+app_louvre_translation:
+    path:    /traduction/{name}
+    defaults: { _controller: AppLouvreBundle:App:translation }

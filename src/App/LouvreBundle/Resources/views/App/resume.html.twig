@@ -5,8 +5,10 @@
   <h1><strong>Etape 3:</strong> Récapitulatif de votre commande </h1> 
 
   <hr>
-<div class="well col-md-8" id="resume">
 
+	
+	
+<div class="well col-md-6" id="total1">
 <strong>Adresse e-mail</strong> : {{ email }} <br />
 
 <strong>Date de la réservation</strong> : {{ date_reservation|date("d/m/Y") }} <br />
@@ -24,28 +26,55 @@ Demi-Journée
 <strong>Nombre de billet(s)</strong> : {{ nombre_billet }} <br />
 
 <strong>Référence de la Commande</strong> : {{ orderCode }} <br />
+</div>
 <br/>
-<div class="well col-md-6" id="total1">
-<strong>Le montant total de votre commande est de</strong> : {{total}}€
+<div class="well col-md-6" id="total2">
+<h3><strong>Le montant total de votre commande est de</strong> : {{total}}€</h3>
 
 <div>
 	<div style="text-align:right">
-		<a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a>
-		<a href="javascript:history.go(-1)"><input type="button" class="btn btn-primary" value="< Etape précédente" /></a>
+	<div class="col-md-4"><a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a></div>
+	<div class="col-md-4"><a href="javascript:history.go(-1)"><input type="button" class="btn btn-secondary" value="< Etape 2" /></a></div>
+	<div class="col-md-4"><form action="paiement" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_JnHnHbzCKM5CxeKzQyI3YfWk"
+                  data-amount={{ prix * 100}}
+                  data-name="Musée du Louvre"
+                  data-label="Acheter"
+                  data-email="{{email}}"
+                  data-description="Evitez les files d'attentes"
+                  data-locale="auto"
+                  data-currency="eur">
+                </script>
+                </form>
+                </div>
 		
-		<a href="{{ path('app_louvre_paiement') }}"><input type="submit" id="up" class="btn btn-success" name="up" value="Etape suivante >" /></a>
-	</div>
+		
+		
+		
+   
+           
+               
+                
+            
+   
+		
+	
 </div>
    
 </div>
 
 </div>
  <br />
- <div class="well col-md-8" id="blockResume">
-{% for tickets in nom %}
+ <div class="well col-md-7" id="allTickets">
+ 
+<div class="well col-md-12">
+	
+	{% for tickets in nom %}
 
 	
-	 <div class="well col-md-10" id="ticketsResume">
+	 <div class="well col-md-12" id="ticketsResume">
  
 <strong>Nom</strong> : {{ tickets.name }} <br /> 
 <strong>Prénom</strong> : {{ tickets.firstName }} <br />
@@ -73,14 +102,30 @@ Tarif réduit
 <hr>
 </div>
 {% endfor %}
+	
+</div>
 
 <div class="well col-md-4">
 <strong>TOTAL</strong> : {{total}}€
 <div class="form-group text-right">
-    <a href="{{ path('app_louvre_paiement') }}"><input name="" type="submit" id="bouton" class="btn btn-success" value="Valider" /></a>
+    <form action="" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_JnHnHbzCKM5CxeKzQyI3YfWk"
+                  data-amount={{ prix * 100}}
+                  data-name="Musée du Louvre"
+                  data-label="Acheter"
+                  data-email="{{email}}"
+                  data-description="Evitez les files d'attentes"
+                  data-locale="auto"
+                  data-currency="eur">
+                </script>
+                </form>
 </div>
+</div>
+
 </div>
 	
-</div>
+
 
 {% endblock %}
