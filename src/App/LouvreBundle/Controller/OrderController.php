@@ -86,23 +86,17 @@ class OrderController extends Controller
 	    $session->set('prix', $prix);
 		$session->set('prixTotal', $prixTotal);
 		//Vers récapitulatif de la commande.
-        return $this->render('AppLouvreBundle:App:resume.html.twig', array(
+        return $this->render('AppLouvreBundle:App:resume.html.twig', [
 			'email' => 					$session->get('email'),
-			'orderDate' => 		$session->get('visitDate'),
+			'orderDate' => 		$session->get('orderDate'),
+			'visitDate' => 		$session->get('visitDate'),
 			'ticketsType'		 =>			$session->get('ticketsType'),
 			'ticketsNbr'	 =>			$session->get('ticketsNbr'),
 			'orderCode'		 =>			$session->get('orderCode'),
 			'allTickets'				 =>			$session->get('tickets'),
 			'total'			 =>			$prixTotal,
 			'prix'			=>			$prix,
-	    ));
-		
-		
-		
+	    ]);
     }
-	
-	
-	
-
 }
 

@@ -56,15 +56,15 @@ class TicketsRate
 		if ($ticket->getLowRate() == TRUE){
 			$tarif = $tarifReduit;
 			
-			if ($session->get('typeBillet') == 2){
-			  $prix = $prixReduit / 2;
+			if ($session->get('ticketsType') == 2){
+			  $prix = $prixReduit ;
 			  $ticket->setTicketsRate($tarif); 
 			  $ticket->setPrix($prix);
 			}
 			else if ($visitorAge < 12){
 				$tarif = $enfant;
-					if ($session->get('typeBillet') == 2){
-						$prix = $prixEnfant / 2; 
+					if ($session->get('ticketsType') == 2){
+						$prix = $prixEnfant ; 
 						$ticket->setPrix($prix);
 						$ticket->setTicketsRate($tarif);
 					}
@@ -83,8 +83,8 @@ class TicketsRate
 		}
 		else if ($visitorAge < 5){
 			$tarif = $bebe;
-			if ($session->get('typeBillet') == 2){
-			  $prix = $prixBebe / 2; 
+			if ($session->get('ticketsType') == 2){
+			  $prix = $prixBebe ; 
 			  $ticket->setPrix($prix);
 			  $ticket->setTicketsRate($tarif);
 			}
@@ -96,8 +96,8 @@ class TicketsRate
 		}
 		else if ($visitorAge < 13 && $visitorAge > 4){
 			$tarif = $enfant;
-			if ($session->get('typeBillet') == 2){
-			  $prix = $prixEnfant / 2; 
+			if ($session->get('ticketsType') == 2){
+			  $prix = $prixEnfant ; 
 			  $ticket->setPrix($prix);
 			  $ticket->setTicketsRate($tarif);
 			}
@@ -109,8 +109,8 @@ class TicketsRate
 		}
 		else if ($visitorAge > 12 && $visitorAge < 61){
 			$tarif = $normal;
-			if ($session->get('typeBillet') == 2){
-			  $prix = $prixNormal / 2;
+			if ($session->get('ticketsType') == 2){
+			  $prix = $prixNormal ;
 			  $ticket->setPrix($prix);
 			  $ticket->setTicketsRate($tarif);
 			}
@@ -122,8 +122,8 @@ class TicketsRate
 		}
 		else{
 			$tarif = $senior;
-			if ($session->get('typeBillet') == 2){
-			  $prix = $prixSenior / 2;
+			if ($session->get('ticketsType') == 2){
+			  $prix = $prixSenior ;
 			  $ticket->setPrix($prix);
 			  $ticket->setTicketsRate($tarif);
 			}

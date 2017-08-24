@@ -10,7 +10,7 @@
 	  </div>
 	{% endfor %}
 
-	<h1><strong>Etape 3:</strong> Récapitulatif de votre commande </h1> 
+	<h1><strong>Etape 3:</strong> Récapitulatif et Paiement de votre commande</h1> 
 
 	<hr>
 	
@@ -20,6 +20,8 @@
 		<strong>Adresse e-mail</strong> : {{ email }} <br />
 
 		<strong>Date de la réservation</strong> : {{ orderDate|date("d/m/Y") }} <br />
+		
+		<strong>Date de la visite</strong> : {{ visitDate|date("d/m/Y") }} <br />
 
 		<strong>Type de billet</strong> : 
 
@@ -33,7 +35,7 @@
 
 		<strong>Nombre de billet(s)</strong> : {{ ticketsNbr }} <br />
 
-		<strong>Référence de la Commande</strong> : {{ orderCode }} <br />
+		
 	</div>
 	<br/>
 	
@@ -92,7 +94,9 @@
 					{% elseif tickets.ticketsRate == 3 %}
 						Senior
 					{% elseif tickets.ticketsRate == 4 %}
-					Tarif réduit
+						Tarif réduit
+					{% elseif tickets.ticketsRate == 5 %}
+						Gratuit
 					{% endif %}
 					<br />
 					<strong>Prix du billet</strong> : {{tickets.prix}}€

@@ -25,7 +25,7 @@ class TicketController extends Controller
 
     	$i = 0;
 
-    	//Créer autant de formulaire que de nombre de billet demandé.
+    	//Créer autant de ticket que de nombre de billet demandé.
 	    while ($i != $session->get('ticketsNbr')){
 	    	$ticket = new Ticket();
 	    	$ticket->setOrder($order);
@@ -53,10 +53,10 @@ class TicketController extends Controller
 			
 		}
 		// vers formulaire de billet.
-        return $this->render('AppLouvreBundle:App:ticket.html.twig', array(
+        return $this->render('AppLouvreBundle:App:ticket.html.twig', [
 	      'form' => $form->createView(),
 	      
-	    ));
+	    ]);
     }
 	
 }

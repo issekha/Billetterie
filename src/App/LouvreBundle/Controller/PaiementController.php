@@ -81,7 +81,7 @@ class PaiementController extends Controller
 			$token = $_POST['stripeToken'];
 
 			$charge = \Stripe\Charge::create([
-				"amount" => $prix * 100,
+				"amount" => $prixTotal * 100,
 				"currency" => "eur",
 				"description" => "Billetterie musée du Louvre",
 				"source" => $token,
