@@ -45,7 +45,7 @@
 		<h3><strong>Le montant total de votre commande est de</strong> : {{total}}€</h3>
 		<div>
 			<div style=" col-md-6">
-				<div class="col-md-4"><a href="../"><input type="button" class="btn btn-danger" value="Annuler" /></a></div>
+				<div class="col-md-4"><a href="{{path('app_louvre_homePage')}}"><input type="button" class="btn btn-danger" value="Annuler" /></a></div>
 				<div id="step3step2" class="col-md-4">
 					<a href="javascript:history.go(-1)"><input type="button" class="btn btn-secondary" value="< Etape 2" /></a>
 				</div>
@@ -54,7 +54,7 @@
 						<script
 						  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 						  data-key="pk_test_JnHnHbzCKM5CxeKzQyI3YfWk"
-						  data-amount={{ prix * 100}}
+						  data-amount={{ total * 100}}
 						  data-name="Musée du Louvre"
 						  data-label="Acheter"
 						  data-email="{{email}}"
@@ -114,7 +114,7 @@
 					<script
 					  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 					  data-key="pk_test_JnHnHbzCKM5CxeKzQyI3YfWk"
-					  data-amount={{ prix * 100}}
+					  data-amount={{ total * 100}}
 					  data-name="Musée du Louvre"
 					  data-label="Acheter"
 					  data-email="{{email}}"

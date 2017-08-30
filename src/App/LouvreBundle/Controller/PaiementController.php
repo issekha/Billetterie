@@ -100,7 +100,7 @@ class PaiementController extends Controller
 		}
 
 		return $this->render('AppLouvreBundle:App:resume.html.twig', [
-		  'prix'			=>			$prix,
+		  'total'			=>			$prixTotal,
 		  'email'			=>			$email,
 		]);
 	}

@@ -28,7 +28,7 @@ body {
 .view {
     /* The image used */
     background-image: url("../images/mdl_cover.jpg");
-
+	opacity: 50%;
     /* Full height */
     height: 100%; 
 
@@ -41,7 +41,7 @@ body {
 }
 .jumbotron {
     color: #fff;
-    background-color: rgba(0, 0, 255, 0.2);
+    background-color: rgba(0, 0, 255, 0);
     
     
     /* tiré de la moitié de sa propre hauteur */
@@ -90,10 +90,11 @@ select{
 }
 #resume, #blockResume{
 	margin-left: 17%;
-	
+	margin-right: 17;
 }
 #total1,#total2{
 	margin-left: 25%;
+	margin-right: 25;
 }
 #ticketsResume{
 	text-align: left;
@@ -107,7 +108,8 @@ select{
 }
 #allTickets{
 	margin-left: 20%;
+	margin-right: 20%;
 }
 #content{
-	background-color: black;
+	background-color: dimgray;
 }

@@ -21,29 +21,29 @@ class __TwigTemplate_336afdeb8d8fbc57a9f9e033905d93c47c45000a823c846d9f367b3333d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_264e2ea2272bcbfb5979bcf26cc12f6d8601bac2e15413cbf5f4f0549372914f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_264e2ea2272bcbfb5979bcf26cc12f6d8601bac2e15413cbf5f4f0549372914f->enter($__internal_264e2ea2272bcbfb5979bcf26cc12f6d8601bac2e15413cbf5f4f0549372914f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
+        $__internal_1e33fd3dd0404da26b08bb38f13df32c94267a3fe654d5fdd30d4acd2ad9047e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1e33fd3dd0404da26b08bb38f13df32c94267a3fe654d5fdd30d4acd2ad9047e->enter($__internal_1e33fd3dd0404da26b08bb38f13df32c94267a3fe654d5fdd30d4acd2ad9047e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
 
-        $__internal_cdb85e134cb747289c19d175ea1a544697da2fbeba33bb9b0cae2d0419a2c66c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cdb85e134cb747289c19d175ea1a544697da2fbeba33bb9b0cae2d0419a2c66c->enter($__internal_cdb85e134cb747289c19d175ea1a544697da2fbeba33bb9b0cae2d0419a2c66c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
+        $__internal_413eac5835bb4e061cab63c904c2ebd58f1cddf2b0eb7fdaed6318303e8bcc46 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_413eac5835bb4e061cab63c904c2ebd58f1cddf2b0eb7fdaed6318303e8bcc46->enter($__internal_413eac5835bb4e061cab63c904c2ebd58f1cddf2b0eb7fdaed6318303e8bcc46_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppLouvreBundle:App:resume.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_264e2ea2272bcbfb5979bcf26cc12f6d8601bac2e15413cbf5f4f0549372914f->leave($__internal_264e2ea2272bcbfb5979bcf26cc12f6d8601bac2e15413cbf5f4f0549372914f_prof);
+        $__internal_1e33fd3dd0404da26b08bb38f13df32c94267a3fe654d5fdd30d4acd2ad9047e->leave($__internal_1e33fd3dd0404da26b08bb38f13df32c94267a3fe654d5fdd30d4acd2ad9047e_prof);
 
         
-        $__internal_cdb85e134cb747289c19d175ea1a544697da2fbeba33bb9b0cae2d0419a2c66c->leave($__internal_cdb85e134cb747289c19d175ea1a544697da2fbeba33bb9b0cae2d0419a2c66c_prof);
+        $__internal_413eac5835bb4e061cab63c904c2ebd58f1cddf2b0eb7fdaed6318303e8bcc46->leave($__internal_413eac5835bb4e061cab63c904c2ebd58f1cddf2b0eb7fdaed6318303e8bcc46_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_b3ca07c1dca3049560f653f4870ee1398b8a2a2857974a43a8a02499fe03c536 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b3ca07c1dca3049560f653f4870ee1398b8a2a2857974a43a8a02499fe03c536->enter($__internal_b3ca07c1dca3049560f653f4870ee1398b8a2a2857974a43a8a02499fe03c536_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_5cfda97810a87046c0a4ca73ccfad22a7fd69490fa804b13fead67394b8b6d1a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5cfda97810a87046c0a4ca73ccfad22a7fd69490fa804b13fead67394b8b6d1a->enter($__internal_5cfda97810a87046c0a4ca73ccfad22a7fd69490fa804b13fead67394b8b6d1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_51d5e485f6546842452ea3bf6e68c0dae7776b67ffebe8fe5ac56adc5046e4e6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_51d5e485f6546842452ea3bf6e68c0dae7776b67ffebe8fe5ac56adc5046e4e6->enter($__internal_51d5e485f6546842452ea3bf6e68c0dae7776b67ffebe8fe5ac56adc5046e4e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_ac6db3b8744ff571c9c1a0160ddf7f23fd2d95a678a2412a07e34931ac49f8b3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ac6db3b8744ff571c9c1a0160ddf7f23fd2d95a678a2412a07e34931ac49f8b3->enter($__internal_ac6db3b8744ff571c9c1a0160ddf7f23fd2d95a678a2412a07e34931ac49f8b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "\t
@@ -129,7 +129,10 @@ class __TwigTemplate_336afdeb8d8fbc57a9f9e033905d93c47c45000a823c846d9f367b3333d
         echo "€</h3>
 \t\t<div>
 \t\t\t<div style=\" col-md-6\">
-\t\t\t\t<div class=\"col-md-4\"><a href=\"../\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a></div>
+\t\t\t\t<div class=\"col-md-4\"><a href=\"";
+        // line 48
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("app_louvre_homePage");
+        echo "\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a></div>
 \t\t\t\t<div id=\"step3step2\" class=\"col-md-4\">
 \t\t\t\t\t<a href=\"javascript:history.go(-1)\"><input type=\"button\" class=\"btn btn-secondary\" value=\"< Etape 2\" /></a>
 \t\t\t\t</div>
@@ -140,7 +143,7 @@ class __TwigTemplate_336afdeb8d8fbc57a9f9e033905d93c47c45000a823c846d9f367b3333d
 \t\t\t\t\t\t  data-key=\"pk_test_JnHnHbzCKM5CxeKzQyI3YfWk\"
 \t\t\t\t\t\t  data-amount=";
         // line 57
-        echo twig_escape_filter($this->env, ((isset($context["prix"]) ? $context["prix"] : $this->getContext($context, "prix")) * 100), "html", null, true);
+        echo twig_escape_filter($this->env, ((isset($context["total"]) ? $context["total"] : $this->getContext($context, "total")) * 100), "html", null, true);
         echo "
 \t\t\t\t\t\t  data-name=\"Musée du Louvre\"
 \t\t\t\t\t\t  data-label=\"Acheter\"
@@ -261,7 +264,7 @@ $context["tickets"], "ticketsRate", array()) == 5)) {
 \t\t\t\t\t  data-key=\"pk_test_JnHnHbzCKM5CxeKzQyI3YfWk\"
 \t\t\t\t\t  data-amount=";
         // line 117
-        echo twig_escape_filter($this->env, ((isset($context["prix"]) ? $context["prix"] : $this->getContext($context, "prix")) * 100), "html", null, true);
+        echo twig_escape_filter($this->env, ((isset($context["total"]) ? $context["total"] : $this->getContext($context, "total")) * 100), "html", null, true);
         echo "
 \t\t\t\t\t  data-name=\"Musée du Louvre\"
 \t\t\t\t\t  data-label=\"Acheter\"
@@ -279,10 +282,10 @@ $context["tickets"], "ticketsRate", array()) == 5)) {
 \t</div>
 ";
         
-        $__internal_51d5e485f6546842452ea3bf6e68c0dae7776b67ffebe8fe5ac56adc5046e4e6->leave($__internal_51d5e485f6546842452ea3bf6e68c0dae7776b67ffebe8fe5ac56adc5046e4e6_prof);
+        $__internal_ac6db3b8744ff571c9c1a0160ddf7f23fd2d95a678a2412a07e34931ac49f8b3->leave($__internal_ac6db3b8744ff571c9c1a0160ddf7f23fd2d95a678a2412a07e34931ac49f8b3_prof);
 
         
-        $__internal_b3ca07c1dca3049560f653f4870ee1398b8a2a2857974a43a8a02499fe03c536->leave($__internal_b3ca07c1dca3049560f653f4870ee1398b8a2a2857974a43a8a02499fe03c536_prof);
+        $__internal_5cfda97810a87046c0a4ca73ccfad22a7fd69490fa804b13fead67394b8b6d1a->leave($__internal_5cfda97810a87046c0a4ca73ccfad22a7fd69490fa804b13fead67394b8b6d1a_prof);
 
     }
 
@@ -298,7 +301,7 @@ $context["tickets"], "ticketsRate", array()) == 5)) {
 
     public function getDebugInfo()
     {
-        return array (  270 => 120,  264 => 117,  255 => 111,  251 => 109,  247 => 106,  237 => 102,  234 => 101,  230 => 99,  228 => 98,  225 => 97,  223 => 96,  220 => 95,  218 => 94,  215 => 93,  213 => 92,  208 => 90,  204 => 88,  200 => 86,  198 => 85,  193 => 83,  188 => 81,  184 => 80,  180 => 79,  176 => 78,  173 => 77,  169 => 76,  164 => 73,  149 => 60,  143 => 57,  128 => 45,  124 => 43,  115 => 36,  111 => 34,  107 => 32,  105 => 31,  99 => 28,  92 => 24,  87 => 22,  82 => 20,  78 => 18,  71 => 12,  62 => 9,  59 => 8,  55 => 7,  52 => 6,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  273 => 120,  267 => 117,  258 => 111,  254 => 109,  250 => 106,  240 => 102,  237 => 101,  233 => 99,  231 => 98,  228 => 97,  226 => 96,  223 => 95,  221 => 94,  218 => 93,  216 => 92,  211 => 90,  207 => 88,  203 => 86,  201 => 85,  196 => 83,  191 => 81,  187 => 80,  183 => 79,  179 => 78,  176 => 77,  172 => 76,  167 => 73,  152 => 60,  146 => 57,  134 => 48,  128 => 45,  124 => 43,  115 => 36,  111 => 34,  107 => 32,  105 => 31,  99 => 28,  92 => 24,  87 => 22,  82 => 20,  78 => 18,  71 => 12,  62 => 9,  59 => 8,  55 => 7,  52 => 6,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -358,7 +361,7 @@ $context["tickets"], "ticketsRate", array()) == 5)) {
 \t\t<h3><strong>Le montant total de votre commande est de</strong> : {{total}}€</h3>
 \t\t<div>
 \t\t\t<div style=\" col-md-6\">
-\t\t\t\t<div class=\"col-md-4\"><a href=\"../\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a></div>
+\t\t\t\t<div class=\"col-md-4\"><a href=\"{{path('app_louvre_homePage')}}\"><input type=\"button\" class=\"btn btn-danger\" value=\"Annuler\" /></a></div>
 \t\t\t\t<div id=\"step3step2\" class=\"col-md-4\">
 \t\t\t\t\t<a href=\"javascript:history.go(-1)\"><input type=\"button\" class=\"btn btn-secondary\" value=\"< Etape 2\" /></a>
 \t\t\t\t</div>
@@ -367,7 +370,7 @@ $context["tickets"], "ticketsRate", array()) == 5)) {
 \t\t\t\t\t\t<script
 \t\t\t\t\t\t  src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
 \t\t\t\t\t\t  data-key=\"pk_test_JnHnHbzCKM5CxeKzQyI3YfWk\"
-\t\t\t\t\t\t  data-amount={{ prix * 100}}
+\t\t\t\t\t\t  data-amount={{ total * 100}}
 \t\t\t\t\t\t  data-name=\"Musée du Louvre\"
 \t\t\t\t\t\t  data-label=\"Acheter\"
 \t\t\t\t\t\t  data-email=\"{{email}}\"
@@ -427,7 +430,7 @@ $context["tickets"], "ticketsRate", array()) == 5)) {
 \t\t\t\t\t<script
 \t\t\t\t\t  src=\"https://checkout.stripe.com/checkout.js\" class=\"stripe-button\"
 \t\t\t\t\t  data-key=\"pk_test_JnHnHbzCKM5CxeKzQyI3YfWk\"
-\t\t\t\t\t  data-amount={{ prix * 100}}
+\t\t\t\t\t  data-amount={{ total * 100}}
 \t\t\t\t\t  data-name=\"Musée du Louvre\"
 \t\t\t\t\t  data-label=\"Acheter\"
 \t\t\t\t\t  data-email=\"{{email}}\"
